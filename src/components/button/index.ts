@@ -15,9 +15,15 @@ export const button = cva(styles.base, {
       regular: styles.regular,
       large: styles.large,
     },
+    justifyContent: {
+      center: styles.center,
+      start: styles.start,
+      end: styles.end,
+    },
   },
   defaultVariants: {
     kind: "soft",
     size: "regular",
+    justifyContent: "center",
   },
 });
