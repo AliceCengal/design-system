@@ -1,3 +1,5 @@
+import { button } from "../button";
+
 export function Header() {
   return (
     <div
@@ -19,7 +21,9 @@ export function Header() {
         Kelasi
       </span>
       <div style={{ flexGrow: 1 }} />
-      <a href="https://github.com">Github</a>
+      <a href="https://github.com" className={button({ kind: "text" })}>
+        Github
+      </a>
     </div>
   );
 }

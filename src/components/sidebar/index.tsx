@@ -1,3 +1,5 @@
+import { button } from "../button";
+
 export function Sidebar() {
   return (
     <div
@@ -6,9 +8,16 @@ export function Sidebar() {
         display: "grid",
         width: "200px",
         backgroundColor: "var(--c-con-1)",
+        alignContent: "start",
+        paddingBlock: "16px",
       }}
     >
-      <a href="#">main page</a>
+      <a href="#" className={button({ kind: "soft" })}>
+        home
+      </a>
+      <a href="#buttons" className={button({ kind: "soft" })}>
+        buttons
+      </a>
     </div>
   );
 }
