@@ -29,11 +29,11 @@ export default function ButtonsPage() {
           <SearchIcon />
           link
         </a>
-        <button className={button({ kind: "bold" })}>
+        <button className={button({ kind: "bold", active: true })}>
           submit
           <SearchIcon />
         </button>
-        <a href="#" className={button({ kind: "bold" })}>
+        <a href="#" className={button({ kind: "bold", active: true })}>
           link
           <SearchIcon />
         </a>
@@ -143,7 +143,7 @@ export default function ButtonsPage() {
         <a href="#" className={button({ kind: "soft" })}>
           link
         </a>
-        <button className={button({ kind: "soft" })}>
+        <button className={button({ kind: "soft", active: true })}>
           <SearchIcon />
           submit
         </button>
@@ -155,7 +155,7 @@ export default function ButtonsPage() {
           submit
           <SearchIcon />
         </button>
-        <a href="#" className={button({ kind: "soft" })}>
+        <a href="#" className={button({ kind: "soft", active: true })}>
           link
           <SearchIcon />
         </a>
@@ -178,11 +178,11 @@ export default function ButtonsPage() {
           <SearchIcon />
           submit
         </button>
-        <a href="#" className={button({ kind: "line" })}>
+        <a href="#" className={button({ kind: "line", active: true })}>
           <SearchIcon />
           link
         </a>
-        <button className={button({ kind: "line" })}>
+        <button className={button({ kind: "line", active: true })}>
           submit
           <SearchIcon />
         </button>
@@ -205,7 +205,7 @@ export default function ButtonsPage() {
         <a href="#" className={button({ kind: "text" })}>
           link
         </a>
-        <button className={button({ kind: "text" })}>
+        <button className={button({ kind: "text", active: true })}>
           <SearchIcon />
           submit
         </button>
@@ -217,7 +217,7 @@ export default function ButtonsPage() {
           submit
           <SearchIcon />
         </button>
-        <a href="#" className={button({ kind: "text" })}>
+        <a href="#" className={button({ kind: "text", active: true })}>
           link
           <SearchIcon />
         </a>
