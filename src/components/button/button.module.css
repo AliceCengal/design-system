@@ -22,7 +22,8 @@ a.base:hover {
   color: var(--c-conf-9);
 }
 
-.bold:hover::after {
+.bold:hover::after,
+.bold.active::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -35,11 +36,12 @@ a.base:hover {
   color: var(--c-con-9);
 }
 
-.soft:hover::after {
+.soft:hover::after,
+.soft.active::after {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: var(--c-con-2);
+  background-color: var(--c-con-1);
 }
 
 .line,
@@ -49,7 +51,8 @@ a.base:hover {
   background-color: transparent;
 }
 
-.line:hover::after {
+.line:hover::after,
+.line.active::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -61,7 +64,8 @@ a.base:hover {
   background-color: transparent;
 }
 
-.text:hover {
+.text:hover,
+.text.active {
   color: var(--c-con-8);
 }
 
