@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
 html,
 body,
 div#app {
@@ -10,6 +12,8 @@ div#app {
   grid-template-rows: auto 1fr auto;
   grid-template-areas: "header header" "sidebar main" "footer footer";
   background-color: var(--c-back);
+  color: var(--c-con-9);
+  overflow-y: auto;
 }
 
 :root {
@@ -24,4 +28,17 @@ div#app {
   --c-con-7: rgba(0, 0, 0, 70%);
   --c-con-8: rgba(0, 0, 0, 80%);
   --c-con-9: rgba(0, 0, 0, 90%);
+  --c-conf-1: rgba(255, 255, 255, 10%);
+  --c-conf-2: rgba(255, 255, 255, 20%);
+  --c-conf-3: rgba(255, 255, 255, 30%);
+  --c-conf-4: rgba(255, 255, 255, 40%);
+  --c-conf-5: rgba(255, 255, 255, 50%);
+  --c-conf-6: rgba(255, 255, 255, 60%);
+  --c-conf-7: rgba(255, 255, 255, 70%);
+  --c-conf-8: rgba(255, 255, 255, 80%);
+  --c-conf-9: rgba(255, 255, 255, 90%);
+}
+
+main {
+  grid-area: main;
 }
