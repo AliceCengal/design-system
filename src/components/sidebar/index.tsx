@@ -1,9 +1,51 @@
+import useHash from "../../utils/use-hash";
 import { useToggle } from "../../utils/use-toggle";
 import { button } from "../button";
-import { ButtonIcon, CollapseIcon, ExpandIcon, HomeIcon } from "../icons";
+import {
+  ButtonIcon,
+  CollapseIcon,
+  ColorIcon,
+  ExpandIcon,
+  HomeIcon,
+} from "../icons";
+
+const NAVS = [
+  {
+    label: "home",
+    href: "",
+    Icon: HomeIcon,
+  },
+  {
+    label: "colors",
+    href: "#colors",
+    Icon: ColorIcon,
+  },
+  {
+    label: "buttons",
+    href: "#buttons",
+    Icon: ButtonIcon,
+  },
+  {
+    label: "modal dialog",
+    href: "",
+    Icon: HomeIcon,
+  },
+  {
+    label: "form controls",
+    href: "",
+    Icon: HomeIcon,
+  },
+  {
+    label: "menu",
+    href: "",
+    Icon: HomeIcon,
+  },
+];
 
 export function Sidebar() {
   const [collapse, toggleCollapse] = useToggle();
+  const [hash] = useHash();
+
   return (
     <div
       style={{
@@ -18,17 +60,21 @@ export function Sidebar() {
         overflowX: "hidden",
       }}
     >
-      <a href="#" className={button({ kind: "soft", justifyContent: "start" })}>
-        <HomeIcon />
-        {!collapse && "home"}
-      </a>
-      <a
-        href="#buttons"
-        className={button({ kind: "soft", justifyContent: "start" })}
-      >
-        <ButtonIcon />
-        {!collapse && "buttons"}
-      </a>
+      {NAVS.map(({ label, href, Icon }) => (
+        <a
+          key={label}
+          href={href || "#"}
+          className={button({
+            kind: "soft",
+            justifyContent: "start",
+            active: href === hash,
+          })}
+        >
+          <Icon />
+          {!collapse && label}
+        </a>
+      ))}
+
       <div style={{ flexGrow: 1 }} />
       <button
         className={button({ kind: "text", justifyContent: "start" })}
