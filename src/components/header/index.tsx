@@ -1,4 +1,5 @@
 import { button } from "../button";
+import { OutboundIcon } from "../icons";
 
 export function Header() {
   return (
@@ -21,8 +22,14 @@ export function Header() {
         Kelasi
       </span>
       <div style={{ flexGrow: 1 }} />
-      <a href="https://github.com" className={button({ kind: "text" })}>
+      <a
+        href="https://github.com"
+        target="_blank"
+        referrerpolicy="no-referrer"
+        className={button({ kind: "text" })}
+      >
         Github
+        <OutboundIcon />
       </a>
     </div>
   );
