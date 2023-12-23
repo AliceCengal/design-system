@@ -13,7 +13,9 @@ export function App() {
     <>
       <Header />
       <Sidebar />
-      {hash === "#buttons" ? <ButtonsPage /> : <FrontPage />}
+      <div className="main-scroll-container">
+        {hash === "#buttons" ? <ButtonsPage /> : <FrontPage />}
+      </div>
       <Footer />
     </>
   );
