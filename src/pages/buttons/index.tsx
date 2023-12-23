@@ -4,7 +4,9 @@ import { generateText } from "../../lib/malay-text-synth";
 
 export default function ButtonsPage() {
   return (
-    <main style={{ maxWidth: "50ch", marginInline: "auto" }}>
+    <main
+      style={{ width: "min(calc(100% - 16px), 600px)", marginInline: "auto" }}
+    >
       <h1>Buttons</h1>
       <p>{generateText(20)}</p>
       <div
@@ -46,6 +48,25 @@ export default function ButtonsPage() {
         </button>
         <a href="#" className={button({ kind: "bold", size: "large" })}>
           link
+        </a>
+        <button className={button({ kind: "bold", justifyContent: "start" })}>
+          <SearchIcon />
+          submit
+        </button>
+        <a
+          href="#"
+          className={button({ kind: "bold", justifyContent: "start" })}
+        >
+          <SearchIcon />
+          link
+        </a>
+        <button className={button({ kind: "bold", justifyContent: "end" })}>
+          submit
+          <SearchIcon />
+        </button>
+        <a href="#" className={button({ kind: "bold", justifyContent: "end" })}>
+          link
+          <SearchIcon />
         </a>
       </div>
 
