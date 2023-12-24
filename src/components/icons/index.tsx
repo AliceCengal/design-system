@@ -33,3 +33,11 @@ export function ColorIcon() {
 export function ChatIcon() {
   return <span class="material-icons-outlined">chat_bubble_outline</span>;
 }
+
+export function EditIcon() {
+  return <span class="material-icons-outlined">edit</span>;
+}
+
+export function MenuIcon() {
+  return <span class="material-icons-outlined">menu</span>;
+}

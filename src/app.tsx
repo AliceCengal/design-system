@@ -7,43 +7,60 @@ import ButtonsPage from "./pages/buttons";
 import ColorsPage from "./pages/colors";
 import DialogsPage from "./pages/dialogs";
 import useHash from "./utils/use-hash";
-import { ButtonIcon, ColorIcon, HomeIcon } from "./components/icons";
+import {
+  ButtonIcon,
+  ChatIcon,
+  ColorIcon,
+  EditIcon,
+  HomeIcon,
+  MenuIcon,
+} from "./components/icons";
+import FormControlsPage from "./pages/form-controls";
+import MenusPage from "./pages/menus";
 
 const NAVS = [
   {
     label: "home",
     href: "",
     Icon: HomeIcon,
+    Page: FrontPage,
   },
   {
     label: "colors",
     href: "#colors",
     Icon: ColorIcon,
+    Page: ColorsPage,
   },
   {
     label: "buttons",
     href: "#buttons",
     Icon: ButtonIcon,
+    Page: ButtonsPage,
   },
   {
     label: "modal dialog",
-    href: "",
-    Icon: HomeIcon,
+    href: "#dialogs",
+    Icon: ChatIcon,
+    Page: DialogsPage,
   },
   {
     label: "form controls",
-    href: "",
-    Icon: HomeIcon,
+    href: "#form-controls",
+    Icon: EditIcon,
+    Page: FormControlsPage,
   },
   {
     label: "menu",
-    href: "",
-    Icon: HomeIcon,
+    href: "#menu",
+    Icon: MenuIcon,
+    Page: MenusPage,
   },
 ];
 
 export function App() {
   const [hash] = useHash();
+
+  const ThisPage = (NAVS.find((nav) => nav.href === hash) ?? NAVS[0]).Page;
 
   return (
     <>
@@ -54,15 +71,7 @@ export function App() {
         ))}
       </Sidebar>
       <div className="main-scroll-container">
-        {hash === "#buttons" ? (
-          <ButtonsPage />
-        ) : hash === "#colors" ? (
-          <ColorsPage />
-        ) : hash === "#dialogs" ? (
-          <DialogsPage />
-        ) : (
-          <FrontPage />
-        )}
+        <ThisPage />
       </div>
       <Footer />
     </>
