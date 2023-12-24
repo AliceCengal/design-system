@@ -3,7 +3,7 @@ import { useToggle } from "../../utils/use-toggle";
 import { MutableRef, useRef } from "preact/hooks";
 
 type ToggleViewProps = {
-  children: (open: boolean, toggleOpen: (a: any) => void) => JSX.Element;
+  children: (open: boolean, toggleOpen: (a?: any) => void) => JSX.Element;
 };
 
 export function ToggleView({ children }: ToggleViewProps) {
