@@ -1,0 +1,6 @@
+.base {
+  border: 1px solid var(--c-front);
+  border-radius: 4px;
+  padding: 16px;
+  background-color: white;
+}
