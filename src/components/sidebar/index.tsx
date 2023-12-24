@@ -42,7 +42,7 @@ export function Sidebar({ children }: PropsWithChildren) {
           flexDirection: "column",
           width: collapse ? "56px" : "200px",
           backgroundColor: "var(--c-con-1)",
-          paddingBlock: "16px",
+          paddingTop: "16px",
           paddingInline: "1px",
           gap: "1px",
           transition: "width 0.25s",
