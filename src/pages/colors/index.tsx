@@ -1,5 +1,7 @@
 import { CSSProperties } from "preact/compat";
 import { generateText } from "../../lib/malay-text-synth";
+import { button } from "../../components/button";
+import { panel } from "../../components/panel";
 
 const CELL_STYLE: CSSProperties = {
   textAlign: "center",
@@ -12,6 +14,43 @@ export default function ColorsPage() {
       style={{ width: "min(calc(100% - 16px), 600px)", marginInline: "auto" }}
     >
       <h1>Colors</h1>
+
+      <form
+        className={panel()}
+        onSubmit={(e) => e.preventDefault()}
+        onInput={(e) => {
+          console.log("form input");
+        }}
+      >
+        <h2>Pick a theme color set</h2>
+        <label>
+          Back color
+          <select>
+            <option value="aliceblue">aliceblue</option>
+          </select>
+        </label>
+        <label>
+          Front color
+          <select>
+            <option value="royalblue">royalblue</option>
+          </select>
+        </label>
+        <fieldset>
+          <legend>axis</legend>
+          <label>
+            <input name="axis" type="radio" value="ld" />
+            light-dark
+          </label>
+          <label>
+            <input name="axis" type="radio" value="dl" />
+            dark-light
+          </label>
+        </fieldset>
+        <button type="reset" className={button()}>
+          reset
+        </button>
+      </form>
+
       <p>{generateText(20)}</p>
       <div
         style={{
