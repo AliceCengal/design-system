@@ -3,9 +3,9 @@ import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 import { Sidebar, SidebarLink } from "./components/sidebar";
 import FrontPage from "./pages";
-import ButtonsPage from "./pages/buttons";
-import ColorsPage from "./pages/colors";
-import DialogsPage from "./pages/dialogs";
+// import ButtonsPage from "./pages/buttons";
+// import ColorsPage from "./pages/colors";
+// import DialogsPage from "./pages/dialogs";
 import useHash from "./utils/use-hash";
 import {
   ButtonIcon,
@@ -15,8 +15,9 @@ import {
   HomeIcon,
   MenuIcon,
 } from "./components/icons";
-import FormControlsPage from "./pages/form-controls";
-import MenusPage from "./pages/menus";
+// import FormControlsPage from "./pages/form-controls";
+// import MenusPage from "./pages/menus";
+import { Suspense, lazy } from "preact/compat";
 
 const NAVS = [
   {
@@ -29,31 +30,31 @@ const NAVS = [
     label: "colors",
     href: "#colors",
     Icon: ColorIcon,
-    Page: ColorsPage,
+    Page: lazy(() => import("./pages/colors")),
   },
   {
     label: "buttons",
     href: "#buttons",
     Icon: ButtonIcon,
-    Page: ButtonsPage,
+    Page: lazy(() => import("./pages/buttons")),
   },
   {
     label: "modal dialog",
     href: "#dialogs",
     Icon: ChatIcon,
-    Page: DialogsPage,
+    Page: lazy(() => import("./pages/dialogs")),
   },
   {
     label: "form controls",
     href: "#form-controls",
     Icon: EditIcon,
-    Page: FormControlsPage,
+    Page: lazy(() => import("./pages/form-controls")),
   },
   {
     label: "menu",
     href: "#menu",
     Icon: MenuIcon,
-    Page: MenusPage,
+    Page: lazy(() => import("./pages/menus")),
   },
 ];
 
@@ -71,7 +72,9 @@ export function App() {
         ))}
       </Sidebar>
       <div className="main-scroll-container">
-        <ThisPage />
+        <Suspense fallback="Loading...">
+          <ThisPage />
+        </Suspense>
       </div>
       <Footer />
     </>
