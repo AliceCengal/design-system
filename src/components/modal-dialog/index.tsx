@@ -1,4 +1,9 @@
-import { PropsWithChildren, useEffect, useRef } from "preact/compat";
+import {
+  CSSProperties,
+  PropsWithChildren,
+  useEffect,
+  useRef,
+} from "preact/compat";
 
 export type DialogProps = PropsWithChildren<{
   open: boolean;
@@ -73,4 +78,14 @@ function isInside(
     rect.left <= point.clientX &&
     point.clientX <= rect.left + rect.width
   );
+}
+
+const DIALOG_ACTIONS_STYLE: CSSProperties = {
+  display: "flex",
+  justifyContent: "flex-end",
+  gap: "var(--sp-2)",
+};
+
+export function DialogActions({ children }: PropsWithChildren) {
+  return <div style={DIALOG_ACTIONS_STYLE}>{children}</div>;
 }
