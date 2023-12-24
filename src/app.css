@@ -17,7 +17,7 @@ div#app {
 
 :root {
   --c-back: aliceblue;
-  --c-front: purple;
+  --c-front: royalblue;
   --c-con-1: rgba(0, 0, 0, 10%);
   --c-con-2: rgba(0, 0, 0, 20%);
   --c-con-3: rgba(0, 0, 0, 30%);
