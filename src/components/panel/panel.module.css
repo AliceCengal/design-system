@@ -1,6 +1,18 @@
 .base {
-  border: 1px solid var(--c-front);
   border-radius: 4px;
-  padding: 16px;
+}
+
+.white {
   background-color: white;
+  border: 1px solid var(--c-front);
+}
+
+.back {
+  background-color: var(--c-back);
+  border: 1px solid var(--c-con-5);
+}
+
+.conBack {
+  background-color: var(--c-con-1);
+  border: 1px solid var(--c-con-5);
 }

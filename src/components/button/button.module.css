@@ -7,7 +7,7 @@
   font-size: 0.9rem;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--sp-1);
   position: relative;
 }
 
@@ -71,17 +71,17 @@ a.base:hover {
 
 .small {
   height: 28px;
-  padding-inline: 12px;
+  padding-inline: var(--sp-1);
 }
 
 .regular {
   height: 40px;
-  padding-inline: 16px;
+  padding-inline: var(--sp-2);
 }
 
 .large {
   height: 48px;
-  padding-inline: 20px;
+  padding-inline: var(--sp-3);
 }
 
 .center {
