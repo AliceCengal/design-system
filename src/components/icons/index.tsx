@@ -21,3 +21,7 @@ export function ExpandIcon() {
 export function OutboundIcon() {
   return <span class="material-icons">open_in_new</span>;
 }
+
+export function ColorIcon() {
+  return <span class="material-icons">palette</span>;
+}
