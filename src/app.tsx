@@ -13,11 +13,12 @@ import {
   ColorIcon,
   EditIcon,
   HomeIcon,
-  MenuIcon,
+  RefreshIcon,
 } from "./components/icons";
 // import FormControlsPage from "./pages/form-controls";
 // import MenusPage from "./pages/menus";
 import { Suspense, lazy } from "preact/compat";
+import { spinner } from "./components/spinner";
 
 const NAVS = [
   {
@@ -39,7 +40,7 @@ const NAVS = [
     Page: lazy(() => import("./pages/buttons")),
   },
   {
-    label: "modal dialog",
+    label: "modal dialogs",
     href: "#dialogs",
     Icon: ChatIcon,
     Page: lazy(() => import("./pages/dialogs")),
@@ -51,10 +52,10 @@ const NAVS = [
     Page: lazy(() => import("./pages/form-controls")),
   },
   {
-    label: "menu",
-    href: "#menu",
-    Icon: MenuIcon,
-    Page: lazy(() => import("./pages/menus")),
+    label: "spinners",
+    href: "#spinners",
+    Icon: RefreshIcon,
+    Page: lazy(() => import("./pages/spinners")),
   },
 ];
 
@@ -71,11 +72,16 @@ export function App() {
           <SidebarLink key={label} label={label} href={href} Icon={Icon} />
         ))}
       </Sidebar>
-      <div className="main-scroll-container">
-        <Suspense fallback="Loading...">
-          <ThisPage />
-        </Suspense>
-      </div>
+      <Suspense
+        fallback={
+          <div
+            className={spinner({ size: "xlarge", kind: "back" })}
+            style={{ marginInline: "auto", marginBlock: "34px" }}
+          />
+        }
+      >
+        <ThisPage />
+      </Suspense>
       <Footer />
     </>
   );

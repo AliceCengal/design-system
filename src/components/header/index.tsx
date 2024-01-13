@@ -1,20 +1,11 @@
 import { button } from "../button";
 import { OutboundIcon } from "../icons";
 
+import styles from "./header.module.css";
+
 export function Header() {
   return (
-    <div
-      style={{
-        gridArea: "header",
-        padding: "0px 16px",
-        height: "56px",
-        backgroundColor: "var(--c-con-2)",
-        color: "var(--c-con-9)",
-        display: "flex",
-        alignItems: "center",
-        gap: "16px",
-      }}
-    >
+    <div className={styles.header}>
       <img src="/public/favicon.ico" height="36" width="36" />
       <span
         style={{ fontSize: "24pt", letterSpacing: "1pt", fontWeight: "500" }}

@@ -7,6 +7,17 @@ export default function FrontPage() {
     >
       <h1>{generateText(10)}</h1>
       <p>{generateText(100)}</p>
+
+      <h2>{generateText(13)}</h2>
+      <p>{generateText(100)}</p>
+      <p>{generateText(100)}</p>
+      <p>{generateText(100)}</p>
+      <p>{generateText(100)}</p>
+      <p>{generateText(100)}</p>
+
+      <p>{generateText(100)}</p>
+      <p>{generateText(100)}</p>
+      <p>{generateText(100)}</p>
     </main>
   );
 }

@@ -41,3 +41,7 @@ export function EditIcon() {
 export function MenuIcon() {
   return <span class="material-icons-outlined">menu</span>;
 }
+
+export function RefreshIcon() {
+  return <span class="material-icons-outlined">refresh</span>;
+}

@@ -3,14 +3,13 @@
 html,
 body,
 div#app {
-  height: 100vh;
+  min-height: 100dvh;
 }
 
 div#app {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr auto;
-  grid-template-areas: "header header" "sidebar main" "footer footer";
   background-color: var(--c-back);
   color: var(--c-con-9);
 }
@@ -48,11 +47,9 @@ div#app {
   --sp-sm: 600px;
   --sp-md: 900px;
   --sp-lg: 1200px;
-}
-
-.main-scroll-container {
-  grid-area: main;
-  overflow: auto;
+  --header-height: 56px;
+  --sidebar-width: 200px;
+  --sidebar-width-collapse: 56px;
 }
 
 .pad-0 {

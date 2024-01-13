@@ -37,18 +37,23 @@ export function Sidebar({ children }: PropsWithChildren) {
     <COLLAPSE_CTX.Provider value={toggleState}>
       <div
         style={{
-          gridArea: "sidebar",
+          position: "sticky",
+          alignSelf: "start",
+          height: "calc(100dvh - var(--header-height))",
+          top: "var(--header-height)",
           display: "flex",
           flexDirection: "column",
-          width: collapse ? "56px" : "200px",
+          width: collapse
+            ? "var(--sidebar-width-collapse)"
+            : "var(--sidebar-width)",
           backgroundColor: "var(--c-con-1)",
-          paddingTop: "16px",
           paddingInline: "1px",
           gap: "1px",
           transition: "width 0.25s",
           overflowX: "hidden",
         }}
       >
+        <div style={{ height: "16px" }} />
         {children}
         <div style={{ flexGrow: 1 }} />
         <button
