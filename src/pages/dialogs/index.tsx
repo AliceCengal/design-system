@@ -3,12 +3,11 @@ import { Dialog, DialogActions } from "../../components/modal-dialog";
 import { panel } from "../../components/panel";
 import { ToggleView } from "../../components/toggle-view";
 import { generateText } from "../../lib/malay-text-synth";
+import pageStyle from "../pages.module.css";
 
 export default function DialogsPage() {
   return (
-    <main
-      style={{ width: "min(calc(100% - 16px), 600px)", marginInline: "auto" }}
-    >
+    <main className={pageStyle.main_sm}>
       <h1>Dialogs</h1>
       <p>{generateText(20)}</p>
 

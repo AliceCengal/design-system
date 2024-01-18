@@ -1,12 +1,11 @@
 import { button } from "../../components/button";
 import { SearchIcon } from "../../components/icons";
 import { generateText } from "../../lib/malay-text-synth";
+import pageStyle from "../pages.module.css";
 
 export default function ButtonsPage() {
   return (
-    <main
-      style={{ width: "min(calc(100% - 16px), 600px)", marginInline: "auto" }}
-    >
+    <main className={pageStyle.main_sm}>
       <h1>Buttons</h1>
       <p>{generateText(20)}</p>
       <div

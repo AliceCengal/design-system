@@ -2,6 +2,7 @@ import { CSSProperties } from "preact/compat";
 import { generateText } from "../../lib/malay-text-synth";
 import { button } from "../../components/button";
 import { panel } from "../../components/panel";
+import pageStyle from "../pages.module.css";
 
 const CELL_STYLE: CSSProperties = {
   textAlign: "center",
@@ -10,9 +11,7 @@ const CELL_STYLE: CSSProperties = {
 
 export default function ColorsPage() {
   return (
-    <main
-      style={{ width: "min(calc(100% - 16px), 600px)", marginInline: "auto" }}
-    >
+    <main className={pageStyle.main_sm}>
       <h1>Colors</h1>
 
       <form
