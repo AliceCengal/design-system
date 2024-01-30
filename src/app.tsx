@@ -13,6 +13,7 @@ import {
   ColorIcon,
   EditIcon,
   HomeIcon,
+  MenuIcon,
   RefreshIcon,
 } from "./components/icons";
 // import FormControlsPage from "./pages/form-controls";
@@ -44,6 +45,12 @@ const NAVS = [
     href: "#dialogs",
     Icon: ChatIcon,
     Page: lazy(() => import("./pages/dialogs")),
+  },
+  {
+    label: "menus",
+    href: "#menu",
+    Icon: MenuIcon,
+    Page: lazy(() => import("./pages/menus")),
   },
   {
     label: "form controls",

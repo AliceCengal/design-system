@@ -1,5 +1,5 @@
 .main_sm {
-  width: min(calc(100% - 16px), 600px);
+  width: min(calc(100% - 33px), 600px);
   margin-inline: auto;
   padding-block: 8px;
 }

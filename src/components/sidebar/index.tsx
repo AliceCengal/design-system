@@ -51,6 +51,7 @@ export function Sidebar({ children }: PropsWithChildren) {
           gap: "1px",
           transition: "width 0.25s",
           overflowX: "hidden",
+          gridRow: "2 / 4",
         }}
       >
         <div style={{ height: "16px" }} />
