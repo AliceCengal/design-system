@@ -12,10 +12,10 @@ export const panel = cva(styles.base, {
     },
     maxWidth: {
       auto: "",
-      xs: "",
-      sm: "",
-      md: "",
-      lg: "",
+      xs: styles.xs,
+      sm: styles.sm,
+      md: styles.md,
+      lg: styles.lg,
     },
     padding: {
       0: "pad-0",

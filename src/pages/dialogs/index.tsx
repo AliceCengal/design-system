@@ -40,6 +40,36 @@ export default function DialogsPage() {
           </>
         )}
       </ToggleView>
+
+      <ToggleView>
+        {(open, toggleOpen) => (
+          <>
+            <button className={button()} onClick={toggleOpen}>
+              Toast sm
+            </button>
+            <Dialog open={open} onClose={() => open && toggleOpen()}>
+              <div className={panel({ kind: "white", maxWidth: "sm" })}>
+                <h2>{generateText(4)}?</h2>
+                <p>{generateText(40)}</p>
+                <DialogActions>
+                  <button
+                    className={button({ kind: "text", size: "small" })}
+                    onClick={toggleOpen}
+                  >
+                    cancel
+                  </button>
+                  <button
+                    className={button({ kind: "text", size: "small" })}
+                    onClick={toggleOpen}
+                  >
+                    accept
+                  </button>
+                </DialogActions>
+              </div>
+            </Dialog>
+          </>
+        )}
+      </ToggleView>
     </main>
   );
 }

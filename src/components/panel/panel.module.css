@@ -16,3 +16,23 @@
   background-color: var(--c-con-1);
   border: 1px solid var(--c-con-5);
 }
+
+.xs {
+  max-width: var(--sp-xs);
+  margin-inline: auto;
+}
+
+.sm {
+  max-width: var(--sp-sm);
+  margin-inline: auto;
+}
+
+.md {
+  max-width: var(--sp-md);
+  margin-inline: auto;
+}
+
+.lg {
+  max-width: var(--sp-lg);
+  margin-inline: auto;
+}
