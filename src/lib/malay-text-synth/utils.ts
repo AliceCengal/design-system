@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 export function array_equals(a1: any[], a2: any[]) {
   // if the other array is a falsy value, return
   if (!a2) return false;

@@ -45,7 +45,7 @@ function SampleMenu({
       >
         {Array(4)
           .fill(1)
-          .map((i, ix) =>
+          .map((_, ix) =>
             ix % (1 + 1) == 0 ? (
               <MenuItem key={ix} asChild>
                 <button

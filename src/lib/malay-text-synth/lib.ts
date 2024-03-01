@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { array_equals, array_random } from "./utils";
 
 const phonemes = [

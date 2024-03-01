@@ -17,7 +17,7 @@ export default function ColorsPage() {
       <form
         className={panel()}
         onSubmit={(e) => e.preventDefault()}
-        onInput={(e) => {
+        onInput={() => {
           console.log("form input");
         }}
       >

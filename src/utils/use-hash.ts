@@ -13,7 +13,7 @@ export default function useHash(): [string, (nh: string) => void] {
   return [getHash(), setHash];
 }
 
-function canaryReducer(s: any) {
+function canaryReducer(_: any) {
   return {};
 }
 
