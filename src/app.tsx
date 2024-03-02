@@ -15,6 +15,7 @@ import {
   HomeIcon,
   MenuIcon,
   RefreshIcon,
+  WebIcon,
 } from "./components/icons";
 // import FormControlsPage from "./pages/form-controls";
 // import MenusPage from "./pages/menus";
@@ -63,6 +64,12 @@ const NAVS = [
     href: "#spinners",
     Icon: RefreshIcon,
     Page: lazy(() => import("./pages/spinners")),
+  },
+  {
+    label: "hacker news",
+    href: "#hacker-news",
+    Icon: WebIcon,
+    Page: lazy(() => import("./pages/hacker-news")),
   },
 ];
 

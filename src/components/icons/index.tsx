@@ -45,3 +45,7 @@ export function MenuIcon() {
 export function RefreshIcon() {
   return <span class="material-icons-outlined">refresh</span>;
 }
+
+export function WebIcon() {
+  return <span class="material-icons-outlined">web</span>;
+}

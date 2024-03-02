@@ -3,3 +3,9 @@
   margin-inline: auto;
   padding-block: 8px;
 }
+
+.main_md {
+  width: min(calc(100% - 33px), 900px);
+  margin-inline: auto;
+  padding-block: 8px;
+}
