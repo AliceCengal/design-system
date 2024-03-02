@@ -41,9 +41,9 @@ export default function FormControlsPage() {
         <Checkbox name="EE" value="EEB" label={generateText(6)} />
 
         <RadioGroup label={generateText(8)} name="HII">
-          <Radio label={generateText(4)} value="H7" />
-          <Radio label={generateText(4)} value="H8" />
-          <Radio label={generateText(4)} value="H9" />
+          <Radio value="H7">{generateText(4)}</Radio>
+          <Radio value="H8">{generateText(4)}</Radio>
+          <Radio value="H9">{generateText(4)}</Radio>
         </RadioGroup>
 
         <Select label={generateText(5)} name="GG">

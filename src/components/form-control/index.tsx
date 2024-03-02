@@ -1,5 +1,6 @@
 import {
   HTMLAttributes,
+  PropsWithChildren,
   ReactNode,
   createContext,
   useContext,
@@ -73,21 +74,27 @@ export function Checkbox({ label, hint, layout, ...props }: CheckboxProps) {
   );
 }
 
-type RadioGroupProps = {
-  name: string;
+type RadioGroupProps = HTMLAttributes<HTMLFieldSetElement> & {
   label: ReactNode;
   children: ReactNode;
 };
 
-export function RadioGroup({ name, label, children }: RadioGroupProps) {
+export function RadioGroup({
+  name,
+  label,
+  children,
+  defaultValue,
+  ...props
+}: RadioGroupProps) {
   return (
     <fieldset
       style={{
         display: "grid",
         gap: "var(--sp-1)",
       }}
+      {...props}
     >
-      <RadioCtx.Provider value={{ name }}>
+      <RadioCtx.Provider value={{ name, defaultValue }}>
         <div>{label}</div>
         {children}
       </RadioCtx.Provider>
@@ -95,17 +102,17 @@ export function RadioGroup({ name, label, children }: RadioGroupProps) {
   );
 }
 
-type RadioProps = {
+type RadioProps = PropsWithChildren<{
   value: any;
-  label: ReactNode;
-};
+}>;
 
-export function Radio({ value, label }: RadioProps) {
+export function Radio({ value, children }: RadioProps) {
   const ctx = useContext(RadioCtx);
   if (!ctx) {
     throw new Error("Radio must be used inside a RadioGroup");
   }
   const name = ctx.name;
+  const defaultValue = ctx.defaultValue;
   return (
     <label
       style={{
@@ -114,13 +121,21 @@ export function Radio({ value, label }: RadioProps) {
         gap: "var(--sp-1)",
       }}
     >
-      <input type="radio" name={name} value={value} />
-      <span>{label}</span>
+      <input
+        type="radio"
+        name={name}
+        value={value}
+        checked={value === defaultValue}
+      />
+      <span>{children}</span>
     </label>
   );
 }
 
-const RadioCtx = createContext<{ name: string } | null>(null);
+const RadioCtx = createContext<{
+  name: RadioGroupProps["name"];
+  defaultValue?: any;
+} | null>(null);
 
 type SelectProps = HTMLAttributes<HTMLSelectElement> & { label: string };
 

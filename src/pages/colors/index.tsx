@@ -3,11 +3,20 @@ import { generateText } from "../../lib/malay-text-synth";
 import { button } from "../../components/button";
 import { panel } from "../../components/panel";
 import pageStyle from "../pages.module.css";
+import {
+  Radio,
+  RadioGroup,
+  Select,
+  formdata,
+} from "../../components/form-control";
+import CSS_COLORS_MAP from "../../utils/css-color-names.json";
 
 const CELL_STYLE: CSSProperties = {
   textAlign: "center",
   lineHeight: 2,
 };
+
+const CSS_COLORS = Object.keys(CSS_COLORS_MAP);
 
 export default function ColorsPage() {
   return (
@@ -17,34 +26,56 @@ export default function ColorsPage() {
       <form
         className={panel()}
         onSubmit={(e) => e.preventDefault()}
-        onInput={() => {
-          console.log("form input");
+        onInput={(e) => {
+          const data = formdata(e.currentTarget);
+          console.log("form input", { data });
+
+          const root = document.querySelector(":root") as HTMLElement;
+          if (!root) return;
+          root.style.setProperty("--c-back", data.backColor.toString());
+          root.style.setProperty("--c-front", data.frontColor.toString());
+
+          const shades = Array(9)
+            .fill(1)
+            .map((_, ix) => ix + 1);
+          const con = data["axis"] === "ld" ? "0, 0, 0" : "255, 255, 255";
+          const conf = data["axis"] === "dl" ? "0, 0, 0" : "255, 255, 255";
+
+          for (const shade of shades) {
+            root.style.setProperty(
+              `--c-con-${shade}`,
+              `rgba(${con}, ${shade * 10}%)`
+            );
+            root.style.setProperty(
+              `--c-conf-${shade}`,
+              `rgba(${conf}, ${shade * 10}%)`
+            );
+          }
+        }}
+        style={{
+          display: "grid",
+          gap: "var(--sp-3)",
+          marginBottom: "var(--sp-2)",
         }}
       >
         <h2>Pick a theme color set</h2>
-        <label>
-          Back color
-          <select>
-            <option value="aliceblue">aliceblue</option>
-          </select>
-        </label>
-        <label>
-          Front color
-          <select>
-            <option value="royalblue">royalblue</option>
-          </select>
-        </label>
-        <fieldset>
-          <legend>axis</legend>
-          <label>
-            <input name="axis" type="radio" value="ld" />
-            light-dark
-          </label>
-          <label>
-            <input name="axis" type="radio" value="dl" />
-            dark-light
-          </label>
-        </fieldset>
+        <Select name="backColor" label="Back color" defaultValue="aliceblue">
+          {CSS_COLORS.map((c) => (
+            <option value={c}>{c}</option>
+          ))}
+        </Select>
+
+        <Select name="frontColor" label="Front color" defaultValue="royalblue">
+          {CSS_COLORS.map((c) => (
+            <option value={c}>{c}</option>
+          ))}
+        </Select>
+
+        <RadioGroup label="Axis" name="axis" defaultValue="ld">
+          <Radio value="ld">light-dark</Radio>
+          <Radio value="dl">dark-light</Radio>
+        </RadioGroup>
+
         <button type="reset" className={button()}>
           reset
         </button>
