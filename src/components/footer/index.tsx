@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <div
+    <footer
       style={{
         gridColumn: "2 / -1",
         backgroundColor: "var(--c-con-2)",
@@ -9,6 +9,6 @@ export function Footer() {
       }}
     >
       &copy; Athran Zuhail 2023
-    </div>
+    </footer>
   );
 }
