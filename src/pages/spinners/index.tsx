@@ -1,9 +1,15 @@
 import { button } from "../../components/button";
+import { SearchIcon } from "../../components/icons";
 import { spinner } from "../../components/spinner";
+import { ToggleView } from "../../components/toggle-view";
 import { generateText } from "../../lib/malay-text-synth";
 import pageStyle from "../pages.module.css";
 
 export default function MenusPage() {
+  const lbl1 = generateText(1);
+  const lbl2 = generateText(1);
+  const lbl3 = generateText(1);
+
   return (
     <main className={pageStyle.main_sm}>
       <h1>Spinners</h1>
@@ -11,7 +17,7 @@ export default function MenusPage() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "auto auto auto",
+          gridTemplateColumns: "1fr 1fr 1fr",
           gap: "var(--sp-2)",
         }}
       >
@@ -20,35 +26,74 @@ export default function MenusPage() {
           <div className={spinner({ size: "small", kind: "con" })} />
           {generateText(1)}
         </button>
-        <button className={button({ size: "small", kind: "bold" })}>
-          {generateText(1)}
-          <div className={spinner({ size: "small", kind: "front" })} />
-        </button>
+        <ToggleView>
+          {(open, toggleOpen) => (
+            <button
+              className={button({ size: "small", kind: "bold" })}
+              onClick={() => {
+                toggleOpen();
+                setTimeout(toggleOpen, 5000);
+              }}
+            >
+              {lbl1}
+              {open ? (
+                <div className={spinner({ size: "small", kind: "front" })} />
+              ) : (
+                <SearchIcon />
+              )}
+            </button>
+          )}
+        </ToggleView>
 
         <div className={spinner({ size: "regular", kind: "back" })} />
         <button className={button({ size: "regular" })}>
-          <div className={spinner({ size: "regular", kind: "con" })} />
+          <div className={spinner({ size: "small", kind: "con" })} />
           {generateText(1)}
         </button>
-        <button className={button({ size: "regular", kind: "bold" })}>
-          <div className={spinner({ size: "regular", kind: "front" })} />
-          {generateText(1)}
-        </button>
+        <ToggleView>
+          {(open, toggleOpen) => (
+            <button
+              className={button({ size: "regular", kind: "bold" })}
+              onClick={() => {
+                toggleOpen();
+                setTimeout(toggleOpen, 5000);
+              }}
+            >
+              {open ? (
+                <div className={spinner({ size: "small", kind: "front" })} />
+              ) : (
+                <SearchIcon />
+              )}
+              {lbl2}
+            </button>
+          )}
+        </ToggleView>
 
         <div className={spinner({ size: "large", kind: "back" })} />
         <button className={button({ size: "large" })}>
-          <div className={spinner({ size: "large", kind: "con" })} />
+          <div className={spinner({ size: "small", kind: "con" })} />
           {generateText(1)}
         </button>
-        <button className={button({ size: "large", kind: "bold" })}>
-          <div className={spinner({ size: "large", kind: "front" })} />
-          {generateText(1)}
-        </button>
-
-        <div className={spinner({ size: "xlarge", kind: "back" })} />
-        <div>&emsp;</div>
-        <div>&emsp;</div>
+        <ToggleView>
+          {(open, toggleOpen) => (
+            <button
+              className={button({ size: "large", kind: "bold" })}
+              onClick={() => {
+                toggleOpen();
+                setTimeout(toggleOpen, 5000);
+              }}
+            >
+              {open ? (
+                <div className={spinner({ size: "small", kind: "front" })} />
+              ) : (
+                <SearchIcon />
+              )}
+              {lbl3}
+            </button>
+          )}
+        </ToggleView>
       </div>
+      <div className={spinner({ size: "xlarge", kind: "back" })} />
     </main>
   );
 }

@@ -20,7 +20,7 @@ export function TextField({ label, hint, layout, ...props }: TextFieldProps) {
 
   const hintNode =
     typeof hint === "string" ? (
-      <span style={{ fontSize: "0.9em", color: "gray" }}>{hint}</span>
+      <span style={{ fontSize: "0.9em", color: "var(--c-con-7)" }}>{hint}</span>
     ) : (
       hint
     );

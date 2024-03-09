@@ -27,7 +27,7 @@ export const panel = cva(styles.base, {
     },
   },
   defaultVariants: {
-    kind: "conBack",
+    kind: "back",
     maxWidth: "auto",
     padding: 2,
   },

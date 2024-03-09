@@ -18,7 +18,7 @@ export default function DialogsPage() {
               Toast
             </button>
             <Dialog open={open} onClose={() => open && toggleOpen()}>
-              <div className={panel({ kind: "white" })}>
+              <div className={panel()}>
                 <h2>{generateText(4)}?</h2>
                 <p>{generateText(40)}</p>
                 <DialogActions>
@@ -48,7 +48,7 @@ export default function DialogsPage() {
               Toast sm
             </button>
             <Dialog open={open} onClose={() => open && toggleOpen()}>
-              <div className={panel({ kind: "white", maxWidth: "sm" })}>
+              <div className={panel({ maxWidth: "sm" })}>
                 <h2>{generateText(4)}?</h2>
                 <p>{generateText(40)}</p>
                 <DialogActions>

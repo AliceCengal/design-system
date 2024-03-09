@@ -14,38 +14,54 @@ export default function HackerNewsPage() {
           alignItems: "center",
           gap: "var(--sp-1)",
           marginBottom: "var(--sp-1)",
+          flexWrap: "wrap",
+          backgroundColor: "var(--c-con-1)",
+          padding: "var(--sp-0_5)",
         }}
       >
         <div
           style={{
             height: "28px",
             width: "28px",
-            border: "4px solid lightgray",
+            border: "4px solid var(--c-con-5)",
             textAlign: "center",
           }}
         >
           Y
         </div>
         <h1 style={{ fontSize: "1rem", marginBlock: 0 }}>Hacker News</h1>
-        <button className={button({ kind: "text", size: "small" })}>new</button>
-        |
-        <button className={button({ kind: "text", size: "small" })}>
-          past
-        </button>
-        |
-        <button className={button({ kind: "text", size: "small" })}>
-          comments
-        </button>
-        |
-        <button className={button({ kind: "text", size: "small" })}>ask</button>
-        |
-        <button className={button({ kind: "text", size: "small" })}>
-          show
-        </button>
-        |
-        <button className={button({ kind: "text", size: "small" })}>
-          submit
-        </button>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "var(--sp-1)",
+            flexWrap: "wrap",
+          }}
+        >
+          <button className={button({ kind: "text", size: "small" })}>
+            new
+          </button>
+          |
+          <button className={button({ kind: "text", size: "small" })}>
+            past
+          </button>
+          |
+          <button className={button({ kind: "text", size: "small" })}>
+            comments
+          </button>
+          |
+          <button className={button({ kind: "text", size: "small" })}>
+            ask
+          </button>
+          |
+          <button className={button({ kind: "text", size: "small" })}>
+            show
+          </button>
+          |
+          <button className={button({ kind: "text", size: "small" })}>
+            submit
+          </button>
+        </div>
         <div style={{ flexGrow: 1 }}>&emsp;</div>
         <button className={button({ kind: "text", size: "small" })}>
           login
