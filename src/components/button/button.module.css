@@ -7,7 +7,6 @@
   font-size: 0.9rem;
   display: flex;
   align-items: center;
-  gap: var(--sp-1);
   position: relative;
 }
 
@@ -72,16 +71,29 @@ a.base:hover {
 .small {
   height: 28px;
   padding-inline: var(--sp-1);
+  gap: var(--sp-1);
 }
 
 .regular {
   height: 40px;
   padding-inline: var(--sp-2);
+  gap: var(--sp-2);
 }
 
 .large {
   height: 48px;
   padding-inline: var(--sp-3);
+  gap: var(--sp-3);
+}
+
+.regular > span:global(.material-icons-outlined),
+.regular > div:global(.spinner) {
+  margin-inline: calc(-1 * var(--sp-1));
+}
+
+.large > span:global(.material-icons-outlined),
+.large > div:global(.spinner) {
+  margin-inline: calc(-1 * var(--sp-1));
 }
 
 .center {

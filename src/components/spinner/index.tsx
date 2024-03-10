@@ -1,7 +1,7 @@
 import { cva } from "../../lib/cva";
 import style from "./spinner.module.css";
 
-export const spinner = cva(style.spinner, {
+export const spinner = cva(["spinner", style.spinner], {
   variants: {
     size: {
       small: style.spinner_sm,
