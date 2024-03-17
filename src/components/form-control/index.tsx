@@ -26,7 +26,20 @@ export function TextField({ label, hint, layout, ...props }: TextFieldProps) {
     );
 
   return (
-    <label style={{ display: "grid" }}>
+    <label
+      style={
+        layout == "freeform"
+          ? { display: "contents" }
+          : layout == "horizontal"
+          ? {
+              display: "grid",
+              gridTemplateColumns: "auto 1fr",
+              columnGap: "var(--sp-1)",
+              alignItems: "baseline",
+            }
+          : { display: "grid" }
+      }
+    >
       {labelNode}
       {hintNode}
       <input {...props} />
