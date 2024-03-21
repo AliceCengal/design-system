@@ -66,6 +66,12 @@ const NAVS = [
     Page: lazy(() => import("./pages/spinners")),
   },
   {
+    label: "skeletons",
+    href: "#skeletons",
+    Icon: RefreshIcon,
+    Page: lazy(() => import("./pages/skeletons")),
+  },
+  {
     label: "hacker news",
     href: "#hacker-news",
     Icon: WebIcon,
