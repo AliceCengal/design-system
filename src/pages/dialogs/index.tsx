@@ -1,7 +1,7 @@
-import { button } from "../../components/button";
-import { Dialog, DialogActions } from "../../components/modal-dialog";
-import { panel } from "../../components/panel";
-import { ToggleView } from "../../components/toggle-view";
+import { button } from "../../components/common/button";
+import { Dialog, DialogActions } from "../../components/common/modal-dialog";
+import { panel } from "../../components/common/panel";
+import { ToggleView } from "../../components/common/toggle-view";
 import { generateText } from "../../lib/malay-text-synth";
 import pageStyle from "../pages.module.css";
 

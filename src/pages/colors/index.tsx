@@ -1,14 +1,14 @@
 import { CSSProperties, JSX } from "preact/compat";
 import { generateText } from "../../lib/malay-text-synth";
-import { button } from "../../components/button";
-import { panel } from "../../components/panel";
+import { button } from "../../components/common/button";
+import { panel } from "../../components/common/panel";
 import pageStyle from "../pages.module.css";
 import {
   Radio,
   RadioGroup,
   Select,
   formdata,
-} from "../../components/form-control";
+} from "../../components/common/form-control";
 import CSS_COLORS_MAP from "../../utils/css-color-names.json";
 
 const CELL_STYLE: CSSProperties = {

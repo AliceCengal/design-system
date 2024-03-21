@@ -1,5 +1,5 @@
 import { JSX } from "preact/compat";
-import { useToggle } from "../../utils/use-toggle";
+import { useToggle } from "../../../utils/use-toggle";
 import { MutableRef, useRef } from "preact/hooks";
 
 type ToggleViewProps = {

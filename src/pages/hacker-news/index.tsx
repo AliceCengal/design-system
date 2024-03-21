@@ -1,5 +1,5 @@
-import { button } from "../../components/button";
-import { TextField } from "../../components/form-control";
+import { button } from "../../components/common/button";
+import { TextField } from "../../components/common/form-control";
 import { generateText } from "../../lib/malay-text-synth";
 
 import style from "./style.module.css";

@@ -1,8 +1,8 @@
 import { JSX, createContext } from "preact";
-import useHash from "../../utils/use-hash";
-import { useToggle } from "../../utils/use-toggle";
-import { button } from "../button";
-import { CollapseIcon, ExpandIcon } from "../icons";
+import useHash from "../../../utils/use-hash";
+import { useToggle } from "../../../utils/use-toggle";
+import { button } from "../../common/button";
+import { CollapseIcon, ExpandIcon } from "../../icons";
 import { PropsWithChildren, useContext } from "preact/compat";
 
 type SidebarLinkProps = {

@@ -1,4 +1,4 @@
-import { cva } from "../../lib/cva";
+import { cva } from "../../../lib/cva";
 import style from "./spinner.module.css";
 
 export const spinner = cva(["spinner", style.spinner], {

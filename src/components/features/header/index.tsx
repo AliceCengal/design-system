@@ -1,5 +1,5 @@
-import { button } from "../button";
-import { OutboundIcon } from "../icons";
+import { button } from "../../common/button";
+import { OutboundIcon } from "../../icons";
 
 import styles from "./header.module.css";
 

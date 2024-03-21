@@ -1,4 +1,4 @@
-import { button } from "../../components/button";
+import { button } from "../../components/common/button";
 import { SearchIcon } from "../../components/icons";
 import { generateText } from "../../lib/malay-text-synth";
 import pageStyle from "../pages.module.css";

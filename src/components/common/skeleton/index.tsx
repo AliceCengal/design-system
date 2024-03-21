@@ -1,7 +1,7 @@
 import { CSSProperties, ComponentProps } from "react";
 
 import style from "./skeleton.module.css";
-import { cx } from "../../lib/cva";
+import { cx } from "../../../lib/cva";
 
 type SkeletonVariantProps =
   | {

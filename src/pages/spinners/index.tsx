@@ -1,7 +1,7 @@
-import { button } from "../../components/button";
+import { button } from "../../components/common/button";
 import { SearchIcon } from "../../components/icons";
-import { spinner } from "../../components/spinner";
-import { ToggleView } from "../../components/toggle-view";
+import { spinner } from "../../components/common/spinner";
+import { ToggleView } from "../../components/common/toggle-view";
 import { generateText } from "../../lib/malay-text-synth";
 import pageStyle from "../pages.module.css";
 

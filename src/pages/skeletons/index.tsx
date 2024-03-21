@@ -1,4 +1,4 @@
-import { Skeleton } from "../../components/skeleton";
+import { Skeleton } from "../../components/common/skeleton";
 import pageStyle from "../pages.module.css";
 
 export default function SkeletonsPage() {

@@ -1,7 +1,7 @@
 import "./app.css";
-import { Footer } from "./components/footer";
-import { Header } from "./components/header";
-import { Sidebar, SidebarLink } from "./components/sidebar";
+import { Footer } from "./components/features/footer";
+import { Header } from "./components/features/header";
+import { Sidebar, SidebarLink } from "./components/features/sidebar";
 import FrontPage from "./pages";
 // import ButtonsPage from "./pages/buttons";
 // import ColorsPage from "./pages/colors";
@@ -20,7 +20,7 @@ import {
 // import FormControlsPage from "./pages/form-controls";
 // import MenusPage from "./pages/menus";
 import { Suspense, lazy } from "preact/compat";
-import { spinner } from "./components/spinner";
+import { spinner } from "./components/common/spinner";
 
 const NAVS = [
   {

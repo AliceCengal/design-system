@@ -1,7 +1,7 @@
-import { button } from "../../components/button";
+import { button } from "../../components/common/button";
 import { ChatIcon } from "../../components/icons";
-import { Menu, MenuItem } from "../../components/menu";
-import { panel } from "../../components/panel";
+import { Menu, MenuItem } from "../../components/common/menu";
+import { panel } from "../../components/common/panel";
 import { generateText } from "../../lib/malay-text-synth";
 import pageStyle from "../pages.module.css";
 import { ComponentProps } from "preact";

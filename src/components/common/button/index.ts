@@ -1,4 +1,4 @@
-import { cva } from "../../lib/cva";
+import { cva } from "../../../lib/cva";
 
 import styles from "./button.module.css";
 

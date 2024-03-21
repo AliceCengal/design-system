@@ -6,7 +6,7 @@ import {
   TextArea,
   TextField,
   formdata,
-} from "../../components/form-control";
+} from "../../components/common/form-control";
 import { generateText } from "../../lib/malay-text-synth";
 import pageStyle from "../pages.module.css";
 
