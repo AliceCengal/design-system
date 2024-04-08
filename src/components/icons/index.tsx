@@ -49,3 +49,7 @@ export function RefreshIcon() {
 export function WebIcon() {
   return <span class="material-icons-outlined">web</span>;
 }
+
+export function TabIcon() {
+  return <span class="material-icons-outlined">tab</span>;
+}

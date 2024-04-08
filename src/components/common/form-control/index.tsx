@@ -88,6 +88,7 @@ export function Checkbox({ label, hint, layout, ...props }: CheckboxProps) {
 }
 
 type RadioGroupProps = HTMLAttributes<HTMLFieldSetElement> & {
+  name: string;
   label: ReactNode;
   children: ReactNode;
 };

@@ -15,6 +15,7 @@ import {
   HomeIcon,
   MenuIcon,
   RefreshIcon,
+  TabIcon,
   WebIcon,
 } from "./components/icons";
 // import FormControlsPage from "./pages/form-controls";
@@ -40,6 +41,12 @@ const NAVS = [
     href: "#buttons",
     Icon: ButtonIcon,
     Page: lazy(() => import("./pages/buttons")),
+  },
+  {
+    label: "tabs",
+    href: "#tabs",
+    Icon: TabIcon,
+    Page: lazy(() => import("./pages/tabs")),
   },
   {
     label: "modal dialogs",

@@ -25,10 +25,15 @@ export const panel = cva(styles.base, {
       4: "pad-4",
       5: "pad-5",
     },
+    tabPanel: {
+      true: styles.tabPanel,
+      false: "",
+    },
   },
   defaultVariants: {
     kind: "back",
     maxWidth: "auto",
     padding: 2,
+    tabPanel: false,
   },
 });

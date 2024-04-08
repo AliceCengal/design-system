@@ -9,6 +9,7 @@ export const button = cva(styles.base, {
       soft: styles.soft,
       line: styles.line,
       text: styles.text,
+      tab: styles.tab,
     },
     size: {
       small: styles.small,

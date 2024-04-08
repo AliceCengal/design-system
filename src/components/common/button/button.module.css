@@ -43,6 +43,39 @@ a.base:hover {
   background-color: var(--c-con-1);
 }
 
+.tab,
+.tab:hover {
+  background-color: var(--c-con-1);
+  color: black;
+  border-top: 1px solid var(--c-con-9);
+  border-right: 1px solid var(--c-con-9);
+  border-left: 1px solid var(--c-con-9);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.tab:not(.active):not(:hover)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--c-con-1);
+}
+
+.tab:not(.active) {
+  border-bottom: 1px solid var(--c-con-9);
+}
+
+*:has(> .tab) {
+  display: flex;
+}
+
+*:has(> .tab)::after {
+  content: "";
+  display: block;
+  flex-grow: 1;
+  border-bottom: 1px solid var(--c-con-9);
+}
+
 .line,
 .line:hover {
   border: 1px solid var(--c-front);

@@ -37,3 +37,9 @@
   max-width: var(--sp-lg);
   margin-inline: auto;
 }
+
+.tabPanel {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
