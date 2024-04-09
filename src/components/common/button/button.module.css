@@ -67,6 +67,7 @@ a.base:hover {
 
 *:has(> .tab) {
   display: flex;
+  overflow-x: auto;
 }
 
 *:has(> .tab)::after {

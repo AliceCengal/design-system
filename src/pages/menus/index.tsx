@@ -16,6 +16,7 @@ export default function MenusPage() {
           display: "flex",
           justifyContent: "space-between",
           marginBottom: "var(--sp-3)",
+          flexWrap: "wrap",
         }}
       >
         <SampleMenu align="start">

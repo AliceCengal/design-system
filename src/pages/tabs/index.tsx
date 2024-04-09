@@ -1,6 +1,5 @@
 import { useMemo, useState } from "preact/hooks";
 import { button } from "../../components/common/button";
-import { panel } from "../../components/common/panel";
 import { TabPanel } from "../../components/common/tab";
 import { generateText } from "../../lib/malay-text-synth";
 import pageStyle from "../pages.module.css";
@@ -27,7 +26,7 @@ export default function FrontPage() {
       <div>
         {Array(4)
           .fill(1)
-          .map((i, ix) => (
+          .map((_, ix) => (
             <button
               className={button({ kind: "tab", active: ix === tab })}
               onClick={() => setTab(ix)}
