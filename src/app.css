@@ -85,3 +85,7 @@ div#app {
 dialog::backdrop {
   background: rgba(0, 0, 0, 0.5);
 }
+
+.material-icons-outlined {
+  vertical-align: bottom;
+}

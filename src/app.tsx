@@ -37,6 +37,12 @@ const NAVS = [
     Page: lazy(() => import("./pages/colors")),
   },
   {
+    label: "sizes",
+    href: "#sizes",
+    Icon: ButtonIcon,
+    Page: lazy(() => import("./pages/sizes")),
+  },
+  {
     label: "buttons",
     href: "#buttons",
     Icon: ButtonIcon,
