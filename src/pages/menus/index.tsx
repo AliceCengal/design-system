@@ -20,13 +20,19 @@ export default function MenusPage() {
         }}
       >
         <SampleMenu align="start">
-          <button className={button({ kind: "bold" })}>settings</button>
+          <button className={button({ kind: "bold" })}>
+            <span>settings</span>
+          </button>
         </SampleMenu>
         <SampleMenu>
-          <button className={button({ kind: "bold" })}>settings</button>
+          <button className={button({ kind: "bold" })}>
+            <span>settings</span>
+          </button>
         </SampleMenu>
         <SampleMenu align="end">
-          <button className={button({ kind: "bold" })}>settings</button>
+          <button className={button({ kind: "bold" })}>
+            <span>settings</span>
+          </button>
         </SampleMenu>
       </div>
       <p>{generateText(30)}</p>
@@ -53,7 +59,7 @@ function SampleMenu({
                   className={button({ kind: "text", justifyContent: "start" })}
                 >
                   <ChatIcon />
-                  {generateText(3)}
+                  <span>{generateText(3)}</span>
                 </button>
               </MenuItem>
             ) : (
@@ -63,7 +69,7 @@ function SampleMenu({
                   href={"#" + generateText(1)}
                 >
                   <ChatIcon />
-                  {generateText(1)}
+                  <span>{generateText(1)}</span>
                 </a>
               </MenuItem>
             )

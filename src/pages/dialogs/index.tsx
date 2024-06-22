@@ -14,9 +14,11 @@ export default function DialogsPage() {
       <ToggleView>
         {(open, toggleOpen) => (
           <>
-            <button className={button()} onClick={toggleOpen}>
-              Toast
-            </button>
+            <p>
+              <button className={button()} onClick={toggleOpen}>
+                <span>Toast</span>
+              </button>
+            </p>
             <Dialog open={open} onClose={() => open && toggleOpen()}>
               <div className={panel()}>
                 <h2>{generateText(4)}?</h2>
@@ -44,9 +46,11 @@ export default function DialogsPage() {
       <ToggleView>
         {(open, toggleOpen) => (
           <>
-            <button className={button()} onClick={toggleOpen}>
-              Toast sm
-            </button>
+            <p>
+              <button className={button()} onClick={toggleOpen}>
+                <span>Toast sm</span>
+              </button>
+            </p>
             <Dialog open={open} onClose={() => open && toggleOpen()}>
               <div className={panel({ maxWidth: "sm" })}>
                 <h2>{generateText(4)}?</h2>

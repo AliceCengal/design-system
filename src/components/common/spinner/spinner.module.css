@@ -38,6 +38,8 @@
 }
 
 .spinner {
+  display: inline-block;
+  vertical-align: middle;
   border: var(--spinner-thick) solid var(--spinner-secondary);
   border-top: var(--spinner-thick) solid var(--spinner-primary);
   border-radius: 50%;

@@ -19,7 +19,11 @@ export default function FormControlsPage() {
       <h1>Form controls</h1>
 
       <form
-        style={{ display: "grid", gap: "var(--sp-3)" }}
+        style={{
+          display: "grid",
+          gap: "var(--sp-3)",
+          paddingBlockEnd: "var(--sp-3)",
+        }}
         onInput={(e) => {
           const data = formdata(e.currentTarget);
           e.currentTarget["display"].innerHTML =

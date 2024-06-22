@@ -23,7 +23,7 @@ export function Header() {
         referrerpolicy="no-referrer"
         className={button({ kind: "text" })}
       >
-        Github
+        <span>Github</span>
         <OutboundIcon />
       </a>
     </header>

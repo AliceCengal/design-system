@@ -24,7 +24,7 @@ export function SidebarLink({ label, href, Icon }: SidebarLinkProps) {
       })}
     >
       <Icon />
-      {!collapse && label}
+      {!collapse && <span>{label}</span>}
     </a>
   );
 }

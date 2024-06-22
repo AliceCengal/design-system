@@ -5,13 +5,13 @@
   border-radius: 4px;
   line-height: 1;
   font-size: 0.9rem;
-  display: flex;
-  align-items: center;
   position: relative;
+  align-content: center;
 }
 
 a.base,
 a.base:hover {
+  display: inline-block;
   text-decoration: none;
 }
 
@@ -46,7 +46,7 @@ a.base:hover {
 .tab,
 .tab:hover {
   background-color: var(--c-con-1);
-  color: black;
+  color: var(--c-con-9);
   border-top: 1px solid var(--c-con-9);
   border-right: 1px solid var(--c-con-9);
   border-left: 1px solid var(--c-con-9);
@@ -104,40 +104,39 @@ a.base:hover {
 
 .small {
   height: 28px;
-  padding-inline: var(--sp-1);
-  gap: var(--sp-1);
+  padding-inline: 0;
+}
+
+.small > *:not(:global(.material-icons-outlined)):not(:global(.spinner)) {
+  margin-inline: var(--sp-1);
 }
 
 .regular {
   height: 40px;
-  padding-inline: var(--sp-2);
-  gap: var(--sp-2);
+  padding-inline: var(--sp-1);
+}
+
+.regular > *:not(:global(.material-icons-outlined)):not(:global(.spinner)) {
+  margin-inline: var(--sp-1);
 }
 
 .large {
   height: 48px;
-  padding-inline: var(--sp-3);
-  gap: var(--sp-3);
+  padding-inline: var(--sp-2);
 }
 
-.regular > span:global(.material-icons-outlined),
-.regular > div:global(.spinner) {
-  margin-inline: calc(-1 * var(--sp-1));
-}
-
-.large > span:global(.material-icons-outlined),
-.large > div:global(.spinner) {
-  margin-inline: calc(-1 * var(--sp-1));
+.large > *:not(:global(.material-icons-outlined)):not(:global(.spinner)) {
+  margin-inline: var(--sp-1);
 }
 
 .center {
-  justify-content: center;
+  text-align: center;
 }
 
 .start {
-  justify-content: start;
+  text-align: start;
 }
 
 .end {
-  justify-content: end;
+  text-align: end;
 }

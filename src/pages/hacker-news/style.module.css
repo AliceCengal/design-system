@@ -12,6 +12,7 @@
   margin-bottom: var(--sp-1);
   background-color: var(--c-con-1);
   padding: var(--sp-0_5);
+  padding-inline-end: var(--sp-1);
   flex-wrap: wrap;
 }
 
@@ -23,7 +24,7 @@
 }
 
 .header_title {
-  font-size: medium;
+  font-size: large;
   margin-block: 0;
 }
 
@@ -71,6 +72,8 @@
 .footer_links {
   display: flex;
   flex-wrap: wrap;
+  gap: var(--sp-1);
+  padding-inline: var(--sp-1);
 }
 
 .footer_search_container {

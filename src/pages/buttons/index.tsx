@@ -16,55 +16,57 @@ export default function ButtonsPage() {
           marginBottom: "16px",
         }}
       >
-        <button className={button({ kind: "bold" })}>submit</button>
+        <button className={button({ kind: "bold" })}>
+          <span>submit</span>
+        </button>
         <a href="#" className={button({ kind: "bold" })}>
-          link
+          <span>link</span>
         </a>
         <button className={button({ kind: "bold" })}>
           <SearchIcon />
-          submit
+          <span>submit</span>
         </button>
         <a href="#" className={button({ kind: "bold" })}>
           <SearchIcon />
-          link
+          <span>link</span>
         </a>
         <button className={button({ kind: "bold", active: true })}>
-          submit
+          <span>submit</span>
           <SearchIcon />
         </button>
         <a href="#" className={button({ kind: "bold", active: true })}>
-          link
+          <span>link</span>
           <SearchIcon />
         </a>
         <button className={button({ kind: "bold", size: "small" })}>
-          submit
+          <span>submit</span>
         </button>
         <a href="#" className={button({ kind: "bold", size: "small" })}>
-          link
+          <span>link</span>
         </a>
         <button className={button({ kind: "bold", size: "large" })}>
-          submit
+          <span>submit</span>
         </button>
         <a href="#" className={button({ kind: "bold", size: "large" })}>
-          link
+          <span>link</span>
         </a>
         <button className={button({ kind: "bold", justifyContent: "start" })}>
           <SearchIcon />
-          submit
+          <span>submit</span>
         </button>
         <a
           href="#"
           className={button({ kind: "bold", justifyContent: "start" })}
         >
           <SearchIcon />
-          link
+          <span>link</span>
         </a>
         <button className={button({ kind: "bold", justifyContent: "end" })}>
-          submit
+          <span>submit</span>
           <SearchIcon />
         </button>
         <a href="#" className={button({ kind: "bold", justifyContent: "end" })}>
-          link
+          <span>link</span>
           <SearchIcon />
         </a>
       </div>
@@ -79,9 +81,11 @@ export default function ButtonsPage() {
           justifyItems: "start",
         }}
       >
-        <button className={button({ kind: "bold" })}>submit</button>
+        <button className={button({ kind: "bold" })}>
+          <span>submit</span>
+        </button>
         <a href="#" className={button({ kind: "bold" })}>
-          link
+          <span>link</span>
         </a>
         <button className={button({ kind: "bold" })}>
           <SearchIcon />
@@ -89,42 +93,42 @@ export default function ButtonsPage() {
         </button>
         <a href="#" className={button({ kind: "bold" })}>
           <SearchIcon />
-          link
+          <span>link</span>
         </a>
         <button className={button({ kind: "bold" })}>
-          submit
+          <span>submit</span>
           <SearchIcon />
         </button>
         <a href="#" className={button({ kind: "bold" })}>
-          link
+          <span>link</span>
           <SearchIcon />
         </a>
         <button className={button({ kind: "bold", size: "small" })}>
-          submit
+          <span>submit</span>
         </button>
         <a href="#" className={button({ kind: "bold", size: "small" })}>
-          link
+          <span>link</span>
         </a>
         <button className={button({ kind: "bold", size: "large" })}>
-          submit
+          <span>submit</span>
         </button>
         <a href="#" className={button({ kind: "bold", size: "large" })}>
-          link
+          <span>link</span>
         </a>
         <button className={button({ kind: "bold", size: "small" })}>
-          submit
+          <span>submit</span>
           <SearchIcon />
         </button>
         <a href="#" className={button({ kind: "bold", size: "small" })}>
-          link
+          <span>link</span>
           <SearchIcon />
         </a>
         <button className={button({ kind: "bold", size: "large" })}>
-          submit
+          <span>submit</span>
           <SearchIcon />
         </button>
         <a href="#" className={button({ kind: "bold", size: "large" })}>
-          link
+          <span>link</span>
           <SearchIcon />
         </a>
       </div>
@@ -138,24 +142,26 @@ export default function ButtonsPage() {
           marginBottom: "16px",
         }}
       >
-        <button className={button({ kind: "soft" })}>submit</button>
+        <button className={button({ kind: "soft" })}>
+          <span>submit</span>
+        </button>
         <a href="#" className={button({ kind: "soft" })}>
-          link
+          <span>link</span>
         </a>
         <button className={button({ kind: "soft", active: true })}>
           <SearchIcon />
-          submit
+          <span>submit</span>
         </button>
         <a href="#" className={button({ kind: "soft" })}>
           <SearchIcon />
-          link
+          <span>link</span>
         </a>
         <button className={button({ kind: "soft" })}>
-          submit
+          <span>submit</span>
           <SearchIcon />
         </button>
         <a href="#" className={button({ kind: "soft", active: true })}>
-          link
+          <span>link</span>
           <SearchIcon />
         </a>
       </div>
@@ -169,24 +175,26 @@ export default function ButtonsPage() {
           marginBottom: "16px",
         }}
       >
-        <button className={button({ kind: "line" })}>submit</button>
+        <button className={button({ kind: "line" })}>
+          <span>submit</span>
+        </button>
         <a href="#" className={button({ kind: "line" })}>
-          link
+          <span>link</span>
         </a>
         <button className={button({ kind: "line" })}>
           <SearchIcon />
-          submit
+          <span>submit</span>
         </button>
         <a href="#" className={button({ kind: "line", active: true })}>
           <SearchIcon />
-          link
+          <span>link</span>
         </a>
         <button className={button({ kind: "line", active: true })}>
-          submit
+          <span>submit</span>
           <SearchIcon />
         </button>
         <a href="#" className={button({ kind: "line" })}>
-          link
+          <span>link</span>
           <SearchIcon />
         </a>
       </div>
@@ -200,26 +208,94 @@ export default function ButtonsPage() {
           marginBottom: "16px",
         }}
       >
-        <button className={button({ kind: "text" })}>submit</button>
+        <button className={button({ kind: "text" })}>
+          <span>submit</span>
+        </button>
         <a href="#" className={button({ kind: "text" })}>
-          link
+          <span>link</span>
         </a>
         <button className={button({ kind: "text", active: true })}>
           <SearchIcon />
-          submit
+          <span>submit</span>
         </button>
         <a href="#" className={button({ kind: "text" })}>
           <SearchIcon />
-          link
+          <span>link</span>
         </a>
         <button className={button({ kind: "text" })}>
-          submit
+          <span>submit</span>
           <SearchIcon />
         </button>
         <a href="#" className={button({ kind: "text", active: true })}>
-          link
+          <span>link</span>
           <SearchIcon />
         </a>
+      </div>
+
+      <p>{generateText(20)}</p>
+      <div
+        style={{
+          display: "grid",
+          gap: "8px",
+          gridTemplateColumns: "1fr 1fr",
+          marginBottom: "16px",
+          justifyItems: "start",
+        }}
+      >
+        <div>
+          <button className={button({ kind: "bold", active: true })}>
+            <SearchIcon />
+          </button>
+          <a href="#" className={button({ kind: "line" })}>
+            <SearchIcon />
+          </a>
+          <button className={button({ kind: "soft" })}>
+            <SearchIcon />
+          </button>
+          <a href="#" className={button({ kind: "text", active: true })}>
+            <SearchIcon />
+          </a>
+        </div>
+
+        <div>
+          <button
+            className={button({ size: "small", kind: "bold", active: true })}
+          >
+            <SearchIcon />
+          </button>
+          <a href="#" className={button({ size: "small", kind: "line" })}>
+            <SearchIcon />
+          </a>
+          <button className={button({ size: "small", kind: "soft" })}>
+            <SearchIcon />
+          </button>
+          <a
+            href="#"
+            className={button({ size: "small", kind: "text", active: true })}
+          >
+            <SearchIcon />
+          </a>
+        </div>
+
+        <div>
+          <button
+            className={button({ size: "large", kind: "bold", active: true })}
+          >
+            <SearchIcon />
+          </button>
+          <a href="#" className={button({ size: "large", kind: "line" })}>
+            <SearchIcon />
+          </a>
+          <button className={button({ size: "large", kind: "soft" })}>
+            <SearchIcon />
+          </button>
+          <a
+            href="#"
+            className={button({ size: "large", kind: "text", active: true })}
+          >
+            <SearchIcon />
+          </a>
+        </div>
       </div>
     </main>
   );

@@ -47,7 +47,7 @@ div#app {
   --sp-lg: 1200px;
   --header-height: 56px;
   --sidebar-width: 200px;
-  --sidebar-width-collapse: 56px;
+  --sidebar-width-collapse: 44px;
 }
 
 .pad-0 {
@@ -87,5 +87,5 @@ dialog::backdrop {
 }
 
 .material-icons-outlined {
-  vertical-align: bottom;
+  vertical-align: middle;
 }

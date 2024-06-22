@@ -24,7 +24,7 @@ export default function MenusPage() {
         <div className={spinner({ size: "small", kind: "back" })} />
         <button className={button({ size: "small" })}>
           <div className={spinner({ size: "small", kind: "con" })} />
-          {generateText(1)}
+          <span>{generateText(1)}</span>
         </button>
         <ToggleView>
           {(open, toggleOpen) => (
@@ -35,7 +35,7 @@ export default function MenusPage() {
                 setTimeout(toggleOpen, 5000);
               }}
             >
-              {lbl1}
+              <span>{lbl1}</span>
               {open ? (
                 <div className={spinner({ size: "small", kind: "front" })} />
               ) : (
@@ -48,7 +48,7 @@ export default function MenusPage() {
         <div className={spinner({ size: "regular", kind: "back" })} />
         <button className={button({ size: "regular" })}>
           <div className={spinner({ size: "small", kind: "con" })} />
-          {generateText(1)}
+          <span>{generateText(1)}</span>
         </button>
         <ToggleView>
           {(open, toggleOpen) => (
@@ -64,7 +64,7 @@ export default function MenusPage() {
               ) : (
                 <SearchIcon />
               )}
-              {lbl2}
+              <span>{lbl2}</span>
             </button>
           )}
         </ToggleView>
@@ -72,7 +72,7 @@ export default function MenusPage() {
         <div className={spinner({ size: "large", kind: "back" })} />
         <button className={button({ size: "large" })}>
           <div className={spinner({ size: "small", kind: "con" })} />
-          {generateText(1)}
+          <span>{generateText(1)}</span>
         </button>
         <ToggleView>
           {(open, toggleOpen) => (
@@ -88,11 +88,12 @@ export default function MenusPage() {
               ) : (
                 <SearchIcon />
               )}
-              {lbl3}
+              <span>{lbl3}</span>
             </button>
           )}
         </ToggleView>
       </div>
+
       <div className={spinner({ size: "xlarge", kind: "back" })} />
     </main>
   );

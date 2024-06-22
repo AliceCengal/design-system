@@ -31,7 +31,7 @@ export default function FrontPage() {
               className={button({ kind: "tab", active: ix === tab })}
               onClick={() => setTab(ix)}
             >
-              {tt[ix]}
+              <span>{tt[ix]}</span>
             </button>
           ))}
       </div>
