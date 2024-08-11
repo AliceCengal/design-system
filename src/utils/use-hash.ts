@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "preact/hooks";
+import { useEffect, useReducer } from "react";
 
 export default function useHash(): [string, (nh: string) => void] {
   const [_, canary] = useReducer(canaryReducer, {});
@@ -13,7 +13,7 @@ export default function useHash(): [string, (nh: string) => void] {
   return [getHash(), setHash];
 }
 
-function canaryReducer(_: any) {
+function canaryReducer() {
   return {};
 }
 

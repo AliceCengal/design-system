@@ -20,7 +20,7 @@ export function Header() {
       <a
         href="https://github.com/AliceCengal/design-system"
         target="_blank"
-        referrerpolicy="no-referrer"
+        referrerPolicy="no-referrer"
         className={button({ kind: "text" })}
       >
         <span>Github</span>

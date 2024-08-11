@@ -20,8 +20,8 @@ import {
 } from "./components/icons";
 // import FormControlsPage from "./pages/form-controls";
 // import MenusPage from "./pages/menus";
-import { Suspense, lazy } from "preact/compat";
 import { spinner } from "./components/common/spinner";
+import { lazy, Suspense } from "react";
 
 const NAVS = [
   {

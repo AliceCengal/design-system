@@ -1,4 +1,4 @@
-import { useMemo, useState } from "preact/hooks";
+import { useMemo, useState } from "react";
 import { button } from "../../components/common/button";
 import { TabPanel } from "../../components/common/tab";
 import { generateText } from "../../lib/malay-text-synth";

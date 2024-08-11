@@ -4,7 +4,7 @@ import { Menu, MenuItem } from "../../components/common/menu";
 import { panel } from "../../components/common/panel";
 import { generateText } from "../../lib/malay-text-synth";
 import pageStyle from "../pages.module.css";
-import { ComponentProps } from "preact";
+import { ComponentProps } from "react";
 
 export default function MenusPage() {
   return (

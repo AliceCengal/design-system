@@ -1,4 +1,4 @@
-import { useReducer } from "preact/hooks";
+import { useReducer } from "react";
 
 export function useToggle(init: boolean = false) {
   return useReducer(f, init);

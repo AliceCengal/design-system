@@ -1,10 +1,13 @@
 import {
   HTMLAttributes,
+  InputHTMLAttributes,
   PropsWithChildren,
   ReactNode,
+  SelectHTMLAttributes,
+  TextareaHTMLAttributes,
   createContext,
   useContext,
-} from "preact/compat";
+} from "react";
 
 type FormControlBase<T> = {
   label?: string | ReactNode;
@@ -12,7 +15,7 @@ type FormControlBase<T> = {
   layout?: T;
 };
 type TextFieldLayout = "vertical" | "horizontal" | "freeform";
-type TextFieldProps = HTMLAttributes<HTMLInputElement> &
+type TextFieldProps = InputHTMLAttributes<HTMLInputElement> &
   FormControlBase<TextFieldLayout>;
 
 export function TextField({ label, hint, layout, ...props }: TextFieldProps) {
@@ -47,7 +50,7 @@ export function TextField({ label, hint, layout, ...props }: TextFieldProps) {
   );
 }
 
-type TextAreaProps = HTMLAttributes<HTMLTextAreaElement> &
+type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement> &
   FormControlBase<TextFieldLayout>;
 
 export function TextArea({ label, hint, layout, ...props }: TextAreaProps) {
@@ -70,7 +73,7 @@ export function TextArea({ label, hint, layout, ...props }: TextAreaProps) {
 }
 
 type CheckboxLayout = "horizontal" | "horizontal-reverse";
-type CheckboxProps = HTMLAttributes<HTMLInputElement> &
+type CheckboxProps = InputHTMLAttributes<HTMLInputElement> &
   FormControlBase<CheckboxLayout>;
 export function Checkbox({ label, hint, layout, ...props }: CheckboxProps) {
   return (
@@ -109,7 +112,7 @@ export function RadioGroup({
       {...props}
     >
       <RadioCtx.Provider value={{ name, defaultValue }}>
-        <div>{label}</div>
+        {Boolean(label) && <div>{label}</div>}
         {children}
       </RadioCtx.Provider>
     </fieldset>
@@ -139,7 +142,7 @@ export function Radio({ value, children }: RadioProps) {
         type="radio"
         name={name}
         value={value}
-        checked={value === defaultValue}
+        defaultChecked={value === defaultValue}
       />
       <span>{children}</span>
     </label>
@@ -151,7 +154,7 @@ const RadioCtx = createContext<{
   defaultValue?: any;
 } | null>(null);
 
-type SelectProps = HTMLAttributes<HTMLSelectElement> & { label: string };
+type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & { label: string };
 
 export function Select({ label, children, ...props }: SelectProps) {
   return (

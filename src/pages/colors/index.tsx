@@ -1,4 +1,4 @@
-import { CSSProperties, JSX } from "preact/compat";
+import { CSSProperties } from "react";
 import { generateText } from "../../lib/malay-text-synth";
 import { button } from "../../components/common/button";
 import { panel } from "../../components/common/panel";
@@ -18,29 +18,48 @@ const CELL_STYLE: CSSProperties = {
 
 const CSS_COLORS = Object.keys(CSS_COLORS_MAP);
 
+const SAMPLE_THEMES = [
+  { backColor: "aliceblue", frontColor: "royalblue", axis: "ld" },
+  { backColor: "darkslategray", frontColor: "snow", axis: "dl" },
+];
+
 const LS_KEY = "design-system-colors-form";
 
 export default function ColorsPage() {
-  const data =
-    typeof sessionStorage !== "undefined"
-      ? JSON.parse(sessionStorage.getItem(LS_KEY) ?? "{}")
-      : {};
-
-  function handleInput(e: JSX.TargetedInputEvent<HTMLFormElement>) {
+  function handleInput(e: any) {
     const data = formdata(e.currentTarget);
-    console.log("form input", { data });
+    // console.log("form input", { data });
     sessionStorage.setItem(LS_KEY, JSON.stringify(data));
 
+    setTheme({
+      axis: data.axis.toString(),
+      backColor: data.backColor.toString(),
+      frontColor: data.frontColor.toString(),
+    });
+  }
+
+  function handleSetTheme(e: any, ix: number) {
+    const f = e.target.form as HTMLFormElement;
+    const t = SAMPLE_THEMES[ix];
+    sessionStorage.setItem(LS_KEY, JSON.stringify(t));
+    f["axis"].value = t.axis;
+    f["backColor"].value = t.backColor;
+    f["frontColor"].value = t.frontColor;
+    setTheme(t);
+  }
+
+  function setTheme(t: (typeof SAMPLE_THEMES)[number]) {
+    const { axis, backColor, frontColor } = t;
     const root = document.querySelector(":root") as HTMLElement;
     if (!root) return;
-    root.style.setProperty("--c-back", data.backColor.toString());
-    root.style.setProperty("--c-front", data.frontColor.toString());
+    root.style.setProperty("--c-back", backColor.toString());
+    root.style.setProperty("--c-front", frontColor.toString());
 
     const shades = Array(9)
       .fill(1)
       .map((_, ix) => ix + 1);
-    const con = data["axis"] === "ld" ? "0, 0, 0" : "255, 255, 255";
-    const conf = data["axis"] === "dl" ? "0, 0, 0" : "255, 255, 255";
+    const con = axis === "ld" ? "0, 0, 0" : "255, 255, 255";
+    const conf = axis === "dl" ? "0, 0, 0" : "255, 255, 255";
 
     for (const shade of shades) {
       root.style.setProperty(
@@ -54,11 +73,21 @@ export default function ColorsPage() {
     }
   }
 
+  const data =
+    typeof sessionStorage !== "undefined"
+      ? JSON.parse(sessionStorage.getItem(LS_KEY) ?? "{}")
+      : {};
+
   return (
     <main className={pageStyle.main_sm}>
       <h1>Colors</h1>
 
       <form
+        ref={(ref) => {
+          if (ref) {
+            handleInput({ currentTarget: ref });
+          }
+        }}
         className={panel()}
         onSubmit={(e) => e.preventDefault()}
         onInput={handleInput}
@@ -75,7 +104,9 @@ export default function ColorsPage() {
           defaultValue={data["backColor"] ?? "aliceblue"}
         >
           {CSS_COLORS.map((c) => (
-            <option value={c}>{c}</option>
+            <option key={c} value={c}>
+              {c}
+            </option>
           ))}
         </Select>
 
@@ -85,7 +116,9 @@ export default function ColorsPage() {
           defaultValue={data["frontColor"] ?? "royalblue"}
         >
           {CSS_COLORS.map((c) => (
-            <option value={c}>{c}</option>
+            <option key={c} value={c}>
+              {c}
+            </option>
           ))}
         </Select>
 
@@ -97,6 +130,25 @@ export default function ColorsPage() {
           <Radio value="ld">light-dark</Radio>
           <Radio value="dl">dark-light</Radio>
         </RadioGroup>
+
+        <div>
+          <span>Example Themes: </span>
+          <button
+            type="button"
+            className={button({ size: "small" })}
+            onClick={(e) => handleSetTheme(e, 0)}
+          >
+            <span>&nbsp;A&nbsp;</span>
+          </button>
+          &emsp;
+          <button
+            type="button"
+            className={button({ size: "small" })}
+            onClick={(e) => handleSetTheme(e, 1)}
+          >
+            <span>&nbsp;B&nbsp;</span>
+          </button>
+        </div>
 
         <button type="reset" className={button()}>
           reset
@@ -142,6 +194,7 @@ export default function ColorsPage() {
             .fill(1)
             .map((_, ix) => (
               <div
+                key={ix}
                 style={{
                   ...CELL_STYLE,
                   backgroundColor: `var(--c-con-${ix + 1})`,
@@ -164,6 +217,7 @@ export default function ColorsPage() {
             .fill(1)
             .map((_, ix) => (
               <div
+                key={ix}
                 style={{
                   ...CELL_STYLE,
                   backgroundColor: `var(--c-conf-${ix + 1})`,

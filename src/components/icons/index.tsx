@@ -1,55 +1,32 @@
-export function SearchIcon() {
-  return <span className="material-icons-outlined">search</span>;
+import { createElement, HTMLAttributes } from "react";
+import { cx } from "../../lib/cva";
+
+function icon(key: string, name: string) {
+  return {
+    [name]: function ({
+      className,
+      ...props
+    }: HTMLAttributes<HTMLSpanElement>) {
+      return createElement(
+        "span",
+        { className: cx("material-icons-outlined", className), ...props },
+        key
+      );
+    },
+  }[name];
 }
 
-export function HomeIcon() {
-  return <span className="material-icons-outlined">home</span>;
-}
-
-export function ButtonIcon() {
-  return <span class="material-icons-outlined">indeterminate_check_box</span>;
-}
-
-export function CollapseIcon() {
-  return (
-    <span class="material-icons-outlined">keyboard_double_arrow_left</span>
-  );
-}
-
-export function ExpandIcon() {
-  return (
-    <span class="material-icons-outlined">keyboard_double_arrow_right</span>
-  );
-}
-
-export function OutboundIcon() {
-  return <span class="material-icons-outlined">open_in_new</span>;
-}
-
-export function ColorIcon() {
-  return <span class="material-icons-outlined">palette</span>;
-}
-
-export function ChatIcon() {
-  return <span class="material-icons-outlined">chat_bubble_outline</span>;
-}
-
-export function EditIcon() {
-  return <span class="material-icons-outlined">edit</span>;
-}
-
-export function MenuIcon() {
-  return <span class="material-icons-outlined">menu</span>;
-}
-
-export function RefreshIcon() {
-  return <span class="material-icons-outlined">refresh</span>;
-}
-
-export function WebIcon() {
-  return <span class="material-icons-outlined">web</span>;
-}
-
-export function TabIcon() {
-  return <span class="material-icons-outlined">tab</span>;
-}
+export const LoginIcon = icon("login", "Login");
+export const SearchIcon = icon("search", "Search");
+export const HomeIcon = icon("home", "Home");
+export const ButtonIcon = icon("indeterminate_check_box", "Button");
+export const CollapseIcon = icon("keyboard_double_arrow_left", "Collapse");
+export const ExpandIcon = icon("keyboard_double_arrow_right", "Expand");
+export const OutboundIcon = icon("open_in_new", "Outbound");
+export const ColorIcon = icon("palette", "Color");
+export const ChatIcon = icon("chat_bubble_outline", "Chat");
+export const EditIcon = icon("edit", "Edit");
+export const MenuIcon = icon("menu", "Menu");
+export const RefreshIcon = icon("refresh", "Refresh");
+export const WebIcon = icon("web", "Web");
+export const TabIcon = icon("tab", "Tab");

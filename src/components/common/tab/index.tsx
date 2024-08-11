@@ -1,5 +1,5 @@
-import { ComponentType, createElement as h } from "preact";
-import { ReactNode } from "preact/compat";
+import { ComponentType, createElement as h, ReactNode } from "react";
+
 import { panel } from "../panel";
 
 type TabPanelProps<T> = {

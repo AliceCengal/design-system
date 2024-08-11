@@ -1,11 +1,10 @@
 "use client";
 
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import { VNode } from "preact";
-import { PropsWithChildren } from "preact/compat";
+import { PropsWithChildren, ReactNode } from "react";
 
 type MenuProps = PropsWithChildren & {
-  trigger: VNode;
+  trigger: ReactNode;
   align?: "start" | "center" | "end";
 };
 

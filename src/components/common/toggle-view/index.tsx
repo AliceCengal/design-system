@@ -1,6 +1,5 @@
-import { JSX } from "preact/compat";
+import { MutableRefObject, useRef } from "react";
 import { useToggle } from "../../../utils/use-toggle";
-import { MutableRef, useRef } from "preact/hooks";
 
 type ToggleViewProps = {
   children: (open: boolean, toggleOpen: (a?: any) => void) => JSX.Element;
@@ -16,7 +15,7 @@ type ToggleViewWithRefProps = {
   children: (
     open: boolean,
     toggleOpen: (a: any) => void,
-    ref: MutableRef<any>
+    ref: MutableRefObject<any>
   ) => JSX.Element;
 };
 

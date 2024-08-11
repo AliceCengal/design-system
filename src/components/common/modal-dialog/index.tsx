@@ -1,9 +1,4 @@
-import {
-  CSSProperties,
-  PropsWithChildren,
-  useEffect,
-  useRef,
-} from "preact/compat";
+import { CSSProperties, PropsWithChildren, useEffect, useRef } from "react";
 
 export type DialogProps = PropsWithChildren<{
   open: boolean;

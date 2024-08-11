@@ -1,14 +1,13 @@
-import { JSX, createContext } from "preact";
+import { createContext, PropsWithChildren, useContext } from "react";
 import useHash from "../../../utils/use-hash";
 import { useToggle } from "../../../utils/use-toggle";
 import { button } from "../../common/button";
 import { CollapseIcon, ExpandIcon } from "../../icons";
-import { PropsWithChildren, useContext } from "preact/compat";
 
 type SidebarLinkProps = {
   label: string;
   href: string;
-  Icon: () => JSX.Element;
+  Icon: (props: any) => JSX.Element;
 };
 
 export function SidebarLink({ label, href, Icon }: SidebarLinkProps) {
