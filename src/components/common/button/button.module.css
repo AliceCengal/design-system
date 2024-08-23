@@ -41,6 +41,7 @@ a.base:hover {
   position: absolute;
   inset: 0;
   background-color: var(--c-con-1);
+  pointer-events: none;
 }
 
 .tab,
@@ -59,6 +60,7 @@ a.base:hover {
   position: absolute;
   inset: 0;
   background-color: var(--c-con-1);
+  pointer-events: none;
 }
 
 .tab:not(.active) {
@@ -90,6 +92,7 @@ a.base:hover {
   position: absolute;
   inset: 0;
   background-color: var(--c-con-2);
+  pointer-events: none;
 }
 
 .text {

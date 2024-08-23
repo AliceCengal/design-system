@@ -89,3 +89,19 @@ dialog::backdrop {
 .material-icons-outlined {
   vertical-align: middle;
 }
+
+input[type="number"][size="1"] {
+  width: 2em;
+}
+input[type="number"][size="2"] {
+  width: 3em;
+}
+input[type="number"][size="3"] {
+  width: 4em;
+}
+input[type="number"][size="4"] {
+  width: 5em;
+}
+input[type="number"][size="5"] {
+  width: 6em;
+}

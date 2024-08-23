@@ -1,13 +1,4 @@
-import {
-  HTMLAttributes,
-  InputHTMLAttributes,
-  PropsWithChildren,
-  ReactNode,
-  SelectHTMLAttributes,
-  TextareaHTMLAttributes,
-  createContext,
-  useContext,
-} from "react";
+import { InputHTMLAttributes, ReactNode, TextareaHTMLAttributes } from "react";
 
 type FormControlBase<T> = {
   label?: string | ReactNode;
@@ -38,7 +29,10 @@ export function TextField({ label, hint, layout, ...props }: TextFieldProps) {
               display: "grid",
               gridTemplateColumns: "auto 1fr",
               columnGap: "var(--sp-1)",
-              alignItems: "baseline",
+              alignItems:
+                props.type == "color" || props.type == "range"
+                  ? "center"
+                  : "baseline",
             }
           : { display: "grid" }
       }
@@ -72,99 +66,23 @@ export function TextArea({ label, hint, layout, ...props }: TextAreaProps) {
   );
 }
 
-type CheckboxLayout = "horizontal" | "horizontal-reverse";
+type CheckboxLayout = "label-start" | "label-end";
 type CheckboxProps = InputHTMLAttributes<HTMLInputElement> &
   FormControlBase<CheckboxLayout>;
 export function Checkbox({ label, hint, layout, ...props }: CheckboxProps) {
+  const labelNode = typeof label === "string" ? <span>{label}</span> : label;
+
   return (
     <label
       style={{
-        display: "grid",
-        gridTemplateColumns: "auto 1fr",
+        display: "flex",
+        flexDirection: layout == "label-start" ? "row" : "row-reverse",
+        justifyContent: "space-between",
         gap: "var(--sp-1)",
       }}
     >
+      {labelNode}
       <input type="checkbox" {...props} />
-      <span>{label}</span>
-    </label>
-  );
-}
-
-type RadioGroupProps = HTMLAttributes<HTMLFieldSetElement> & {
-  name: string;
-  label: ReactNode;
-  children: ReactNode;
-};
-
-export function RadioGroup({
-  name,
-  label,
-  children,
-  defaultValue,
-  ...props
-}: RadioGroupProps) {
-  return (
-    <fieldset
-      style={{
-        display: "grid",
-        gap: "var(--sp-1)",
-      }}
-      {...props}
-    >
-      <RadioCtx.Provider value={{ name, defaultValue }}>
-        {Boolean(label) && <div>{label}</div>}
-        {children}
-      </RadioCtx.Provider>
-    </fieldset>
-  );
-}
-
-type RadioProps = PropsWithChildren<{
-  value: any;
-}>;
-
-export function Radio({ value, children }: RadioProps) {
-  const ctx = useContext(RadioCtx);
-  if (!ctx) {
-    throw new Error("Radio must be used inside a RadioGroup");
-  }
-  const name = ctx.name;
-  const defaultValue = ctx.defaultValue;
-  return (
-    <label
-      style={{
-        display: "grid",
-        gridTemplateColumns: "auto 1fr",
-        gap: "var(--sp-1)",
-      }}
-    >
-      <input
-        type="radio"
-        name={name}
-        value={value}
-        defaultChecked={value === defaultValue}
-      />
-      <span>{children}</span>
-    </label>
-  );
-}
-
-const RadioCtx = createContext<{
-  name: RadioGroupProps["name"];
-  defaultValue?: any;
-} | null>(null);
-
-type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & { label: string };
-
-export function Select({ label, children, ...props }: SelectProps) {
-  return (
-    <label
-      style={{
-        display: "grid",
-      }}
-    >
-      <span>{label}</span>
-      <select {...props}>{children}</select>
     </label>
   );
 }
