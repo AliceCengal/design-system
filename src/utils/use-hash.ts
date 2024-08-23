@@ -1,20 +1,16 @@
-import { useEffect, useReducer } from "react";
+import { useSyncExternalStore } from "react";
 
-export default function useHash(): [string, (nh: string) => void] {
-  const [_, canary] = useReducer(canaryReducer, {});
+export default function useHash() {
+  const hash = useSyncExternalStore(subscribe, getHash, getServerHash);
 
-  useEffect(() => {
-    window.addEventListener("hashchange", canary);
-    return () => {
-      window.removeEventListener("hashchange", canary);
-    };
-  }, []);
-
-  return [getHash(), setHash];
+  return [hash, setHash] as const;
 }
 
-function canaryReducer() {
-  return {};
+function subscribe(cb: () => void) {
+  window.addEventListener("hashchange", cb);
+  return () => {
+    window.removeEventListener("hashchange", cb);
+  };
 }
 
 function setHash(newHash: string) {
@@ -23,4 +19,8 @@ function setHash(newHash: string) {
 
 function getHash() {
   return window.location.hash;
+}
+
+function getServerHash() {
+  return "";
 }
