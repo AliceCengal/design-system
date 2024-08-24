@@ -1,5 +1,8 @@
 import { InputHTMLAttributes, ReactNode, TextareaHTMLAttributes } from "react";
 
+import styles from "./form-control.module.css";
+import { stringToElement } from "./lib";
+
 type FormControlBase<T> = {
   label?: string | ReactNode;
   hint?: string | ReactNode;
@@ -9,7 +12,12 @@ type TextFieldLayout = "vertical" | "horizontal" | "freeform";
 type TextFieldProps = InputHTMLAttributes<HTMLInputElement> &
   FormControlBase<TextFieldLayout>;
 
-export function TextField({ label, hint, layout, ...props }: TextFieldProps) {
+export function TextField({
+  label,
+  hint,
+  layout = "vertical",
+  ...props
+}: TextFieldProps) {
   const labelNode = typeof label === "string" ? <span>{label}</span> : label;
 
   const hintNode =
@@ -20,26 +28,10 @@ export function TextField({ label, hint, layout, ...props }: TextFieldProps) {
     );
 
   return (
-    <label
-      style={
-        layout == "freeform"
-          ? { display: "contents" }
-          : layout == "horizontal"
-          ? {
-              display: "grid",
-              gridTemplateColumns: "auto 1fr",
-              columnGap: "var(--sp-1)",
-              alignItems:
-                props.type == "color" || props.type == "range"
-                  ? "center"
-                  : "baseline",
-            }
-          : { display: "grid" }
-      }
-    >
+    <label className={styles["input-" + layout]}>
       {labelNode}
       {hintNode}
-      <input {...props} />
+      <input className={styles["input"]} {...props} />
     </label>
   );
 }
@@ -47,7 +39,12 @@ export function TextField({ label, hint, layout, ...props }: TextFieldProps) {
 type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement> &
   FormControlBase<TextFieldLayout>;
 
-export function TextArea({ label, hint, layout, ...props }: TextAreaProps) {
+export function TextArea({
+  label,
+  hint,
+  layout = "vertical",
+  ...props
+}: TextAreaProps) {
   const labelNode = typeof label === "string" ? <span>{label}</span> : label;
 
   const hintNode =
@@ -58,10 +55,10 @@ export function TextArea({ label, hint, layout, ...props }: TextAreaProps) {
     );
 
   return (
-    <label style={{ display: "grid" }}>
+    <label className={styles["input-" + layout]}>
       {labelNode}
       {hintNode}
-      <textarea {...props} />
+      <textarea className={styles["input"]} {...props} />
     </label>
   );
 }
@@ -69,19 +66,15 @@ export function TextArea({ label, hint, layout, ...props }: TextAreaProps) {
 type CheckboxLayout = "label-start" | "label-end";
 type CheckboxProps = InputHTMLAttributes<HTMLInputElement> &
   FormControlBase<CheckboxLayout>;
-export function Checkbox({ label, hint, layout, ...props }: CheckboxProps) {
-  const labelNode = typeof label === "string" ? <span>{label}</span> : label;
-
+export function Checkbox({
+  label,
+  hint,
+  layout = "label-end",
+  ...props
+}: CheckboxProps) {
   return (
-    <label
-      style={{
-        display: "flex",
-        flexDirection: layout == "label-start" ? "row" : "row-reverse",
-        justifyContent: "space-between",
-        gap: "var(--sp-1)",
-      }}
-    >
-      {labelNode}
+    <label className={styles["checkbox-" + layout]}>
+      {stringToElement(label)}
       <input type="checkbox" {...props} />
     </label>
   );

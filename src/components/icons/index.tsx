@@ -30,3 +30,5 @@ export const MenuIcon = icon("menu", "Menu");
 export const RefreshIcon = icon("refresh", "Refresh");
 export const WebIcon = icon("web", "Web");
 export const TabIcon = icon("tab", "Tab");
+export const CheckIcon = icon("check", "Check");
+export const ExpandedIcon = icon("keyboard_arrow_down", "Expanded");

@@ -1,0 +1,171 @@
+.input:not([type="file"]) {
+  padding-inline: var(--sp-2);
+}
+
+.input {
+  padding-block: var(--sp-1);
+}
+
+.input-vertical .input,
+.input-vertical .multiselect-trigger,
+.input-vertical .select-trigger {
+  margin-block-start: var(--sp-1);
+}
+
+.input-freeform {
+  display: contents;
+}
+
+.input-horizontal {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: var(--sp-2);
+  align-items: baseline;
+}
+
+.input-horizontal:has(input[type="color"]),
+.input-horizontal:has(input[type="range"]) {
+  align-items: center;
+}
+
+.input-vertical {
+  display: grid;
+}
+
+.input[type="number"][size="1"] {
+  width: 2em;
+}
+.input[type="number"][size="2"] {
+  width: 3em;
+}
+.input[type="number"][size="3"] {
+  width: 4em;
+}
+.input[type="number"][size="4"] {
+  width: 5em;
+}
+.input[type="number"][size="5"] {
+  width: 6em;
+}
+
+.checkbox-label-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--sp-3);
+}
+
+.checkbox-label-end {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  gap: var(--sp-3);
+}
+
+.multiselect-trigger,
+.select-trigger {
+  all: unset;
+  background-color: field;
+  padding-inline: var(--sp-2);
+  padding-block: var(--sp-1);
+  border: 1px solid light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-radius: 2px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--sp-2);
+}
+
+.multiselect-trigger[data-focus],
+.select-trigger:focus {
+  outline: auto;
+}
+
+.multiselect-text,
+.select-trigger > span:first-of-type {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.multiselect-options,
+.select-options {
+  width: var(--button-width);
+  background-color: field;
+  border: 1px solid light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-radius: 2px;
+  overflow: hidden;
+  padding-block: var(--sp-1);
+}
+
+.multiselect-option,
+.select-option {
+  padding-inline: var(--sp-2);
+  padding-block: var(--sp-1);
+}
+
+.multiselect-option[data-active],
+.multiselect-option[data-focus],
+.select-option[data-highlighted] {
+  background-color: var(--c-con-2);
+}
+
+.multiselect-option[data-selected],
+.select-option:has(> .select-indicator) {
+  background-color: var(--c-front);
+  color: var(--c-conf-9);
+}
+
+.multiselect-option[data-selected][data-active],
+.multiselect-option[data-selected][data-focus] {
+  background-color: var(--c-con-5);
+}
+
+.radio-root {
+  display: flex;
+  gap: var(--sp-2);
+  column-gap: var(--sp-4);
+  margin-block-start: var(--sp-2);
+  justify-self: start;
+}
+
+.radio-root[data-orientation="vertical"] {
+  flex-direction: column;
+}
+
+.radio-root[data-orientation="horizontal"] {
+  flex-direction: row;
+}
+
+.radio-item {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.input-horizontal .radio-item {
+  flex-direction: row-reverse;
+}
+
+.radio-knob {
+  all: unset;
+  width: 1rem;
+  height: 1rem;
+  background-color: field;
+  box-shadow: 0px 0px 1px 1px inset rgba(0, 0, 0, 0.75);
+  border-radius: 99vw;
+  display: grid;
+}
+
+.radio-knob:focus {
+  outline: auto;
+}
+
+.radio-knob > *[data-state="checked"] {
+  display: inline-block;
+  place-self: center;
+  height: 50%;
+  width: 50%;
+  background-color: var(--c-front);
+  border-radius: 99vw;
+}

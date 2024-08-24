@@ -3,12 +3,7 @@ import { generateText } from "../../lib/malay-text-synth";
 import { button } from "../../components/common/button";
 import { panel } from "../../components/common/panel";
 import pageStyle from "../pages.module.css";
-import {
-  Radio,
-  RadioGroup,
-  Select,
-  formdata,
-} from "../../components/common/form-control";
+import { formdata } from "../../components/common/form-control";
 import CSS_COLORS_MAP from "../../utils/css-color-names.json";
 
 const CELL_STYLE: CSSProperties = {
@@ -98,7 +93,7 @@ export default function ColorsPage() {
         }}
       >
         <h2>Pick a theme color set</h2>
-        <Select
+        {/* <Select
           name="backColor"
           label="Back color"
           defaultValue={data["backColor"] ?? "aliceblue"}
@@ -129,7 +124,7 @@ export default function ColorsPage() {
         >
           <Radio value="ld">light-dark</Radio>
           <Radio value="dl">dark-light</Radio>
-        </RadioGroup>
+        </RadioGroup> */}
 
         <div>
           <span>Example Themes: </span>
