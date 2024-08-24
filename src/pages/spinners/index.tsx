@@ -18,7 +18,7 @@ export default function MenusPage() {
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr 1fr",
-          gap: "var(--sp-2)",
+          gap: "var(--sp-4)",
         }}
       >
         <div className={spinner({ size: "small", kind: "back" })} />

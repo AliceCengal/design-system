@@ -78,7 +78,7 @@ function isInside(
 const DIALOG_ACTIONS_STYLE: CSSProperties = {
   display: "flex",
   justifyContent: "flex-end",
-  gap: "var(--sp-2)",
+  gap: "var(--sp-4)",
 };
 
 export function DialogActions({ children }: PropsWithChildren) {

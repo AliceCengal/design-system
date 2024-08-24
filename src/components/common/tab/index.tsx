@@ -1,6 +1,7 @@
 import { ComponentType, createElement as h, ReactNode } from "react";
 
 import { panel } from "../panel";
+import { Box } from "../box";
 
 type TabPanelProps<T> = {
   value: T;
@@ -20,11 +21,10 @@ export function TabPanel<T>({
   const isShow = value === index;
 
   return (
-    <div
-      style={{
-        display: isShow ? "block" : "none",
-      }}
+    <Box
       className={panel({ kind: "conBack", tabPanel: true })}
+      display={isShow ? "block" : "none"}
+      padding="var(--sp-3)"
     >
       {!isShow && !keepMounted
         ? null
@@ -33,6 +33,6 @@ export function TabPanel<T>({
         : typeof render !== "undefined"
         ? render()
         : null}
-    </div>
+    </Box>
   );
 }

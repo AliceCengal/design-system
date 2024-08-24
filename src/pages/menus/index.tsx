@@ -46,10 +46,7 @@ function SampleMenu({
 }: Omit<ComponentProps<typeof Menu>, "trigger">) {
   return (
     <Menu trigger={children as any} {...props}>
-      <div
-        className={panel({ kind: "back", padding: 0 })}
-        style={{ display: "grid" }}
-      >
+      <div className={panel({ kind: "back" })} style={{ display: "grid" }}>
         {Array(4)
           .fill(1)
           .map((_, ix) =>

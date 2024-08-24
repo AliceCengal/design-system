@@ -15,13 +15,13 @@ export default function SizesPage() {
           marginInline: "auto",
           padding: "1.25rem",
           alignContent: "end",
-          width: 1280,
+          width: 1272,
           height: 832,
           backgroundColor: "hsla(0, 75%, 50%, 20%)",
           border: "1px solid gray",
         }}
       >
-        lg - 1280px - 80rem
+        lg - 1272px - ~80rem
         <div
           style={{
             position: "absolute",
@@ -41,26 +41,26 @@ export default function SizesPage() {
               padding: "0.75rem",
               inset: -1,
               alignContent: "end",
-              width: 640,
+              width: 636,
               height: 704,
               backgroundColor: "hsla(60, 75%, 50%, 20%)",
               border: "1px solid gray",
             }}
           >
-            sm - 640px - 40rem
+            sm - 636px - ~40rem
             <div
               style={{
                 position: "absolute",
                 padding: "0.5rem",
                 inset: -1,
                 alignContent: "end",
-                width: 320,
+                width: 312,
                 height: 640,
                 backgroundColor: "hsla(90, 75%, 50%, 20%)",
                 border: "1px solid gray",
               }}
             >
-              xs - 320px - 20rem
+              xs - 312px - ~20rem
               <div
                 style={{
                   position: "absolute",
@@ -102,6 +102,23 @@ export default function SizesPage() {
                     thumb
                     <br />
                     64x64
+                  </div>
+                  <div
+                    style={{
+                      width: 32,
+                      height: 32,
+                      backgroundColor: "hsla(90, 75%, 50%, 20%)",
+                      border: "1px solid gray",
+                      textAlign: "center",
+                      alignContent: "center",
+                    }}
+                  >
+                    I
+                  </div>
+                  <div style={{ lineHeight: 1 }}>
+                    icon
+                    <br />
+                    32x32
                   </div>
                 </div>
                 <div
@@ -158,7 +175,7 @@ export default function SizesPage() {
                       borderRadius: "0.25rem",
                     }}
                   >
-                    <span>button</span>
+                    <span>button</span>&ensp;
                     <SearchIcon />
                   </div>
                   <div

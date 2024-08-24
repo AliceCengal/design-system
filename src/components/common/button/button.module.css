@@ -2,7 +2,7 @@
   font-weight: 500;
   text-transform: uppercase;
   border: none;
-  border-radius: 4px;
+  border-radius: var(--sp-1);
   line-height: 1;
   font-size: 0.9rem;
   position: relative;
@@ -111,25 +111,25 @@ a.base:hover {
 }
 
 .small > *:not(:global(.material-icons-outlined)):not(:global(.spinner)) {
-  margin-inline: var(--sp-1);
+  margin-inline: var(--sp-2);
 }
 
 .regular {
   height: 40px;
-  padding-inline: var(--sp-1);
+  padding-inline: var(--sp-2);
 }
 
 .regular > *:not(:global(.material-icons-outlined)):not(:global(.spinner)) {
-  margin-inline: var(--sp-1);
+  margin-inline: var(--sp-2);
 }
 
 .large {
   height: 48px;
-  padding-inline: var(--sp-2);
+  padding-inline: var(--sp-4);
 }
 
 .large > *:not(:global(.material-icons-outlined)):not(:global(.spinner)) {
-  margin-inline: var(--sp-1);
+  margin-inline: var(--sp-2);
 }
 
 .center {

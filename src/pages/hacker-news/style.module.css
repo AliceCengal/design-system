@@ -1,18 +1,17 @@
 .page_container {
   border: 1px solid lightgray;
-  width: min(calc(100% - 33px), 900px);
+  width: min(calc(100% - 33px), var(--sp-md));
   margin-inline: auto;
-  margin-block: 8px;
+  margin-block: var(--sp-2);
 }
 
 .header_a {
   display: flex;
   align-items: center;
-  gap: var(--sp-1);
-  margin-bottom: var(--sp-1);
+  gap: var(--sp-2);
   background-color: var(--c-con-1);
-  padding: var(--sp-0_5);
-  padding-inline-end: var(--sp-1);
+  padding: var(--sp-1);
+  padding-inline-end: var(--sp-2);
   flex-wrap: wrap;
 }
 
@@ -31,7 +30,7 @@
 .header_links {
   display: flex;
   align-items: center;
-  column-gap: var(--sp-1);
+  column-gap: var(--sp-2);
   flex-wrap: wrap;
   flex-grow: 1;
 }
@@ -54,9 +53,10 @@
 .post_container {
   display: grid;
   grid-template-columns: auto 1fr;
-  padding-inline-start: var(--sp-1);
-  column-gap: var(--sp-1);
-  row-gap: var(--sp-2);
+  padding-inline-start: var(--sp-2);
+  padding-block: var(--sp-3);
+  column-gap: var(--sp-2);
+  row-gap: var(--sp-4);
 }
 
 .post_number {
@@ -72,10 +72,10 @@
 .footer_links {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--sp-1);
-  padding-inline: var(--sp-1);
+  gap: var(--sp-2);
+  padding-inline: var(--sp-2);
 }
 
 .footer_search_container {
-  padding: var(--sp-1);
+  padding: var(--sp-2);
 }

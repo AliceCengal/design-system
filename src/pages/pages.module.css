@@ -1,11 +1,11 @@
 .main_sm {
-  width: min(calc(100% - 33px), 600px);
+  width: min(calc(100% - 33px), var(--sp-sm));
   margin-inline: auto;
   margin-block: 8px;
 }
 
 .main_md {
-  width: min(calc(100% - 33px), 900px);
+  width: min(calc(100% - 33px), var(--sp-md));
   margin-inline: auto;
   margin-block: 8px;
 }
