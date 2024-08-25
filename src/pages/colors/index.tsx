@@ -3,8 +3,17 @@ import { generateText } from "../../lib/malay-text-synth";
 import { button } from "../../components/common/button";
 import { panel } from "../../components/common/panel";
 import pageStyle from "../pages.module.css";
-import { formdata } from "../../components/common/form-control";
 import CSS_COLORS_MAP from "../../utils/css-color-names.json";
+import {
+  RadioGroup,
+  RadioItem,
+} from "../../components/common/form-control/radio-group";
+import {
+  Select,
+  SelectItem,
+} from "../../components/common/form-control/select";
+import useForm from "../../utils/use-form";
+import { useLocalStorage } from "../../utils/use-local-storage";
 
 const CELL_STYLE: CSSProperties = {
   textAlign: "center",
@@ -12,43 +21,42 @@ const CELL_STYLE: CSSProperties = {
 };
 
 const CSS_COLORS = Object.keys(CSS_COLORS_MAP);
-
+const LS_KEY = "design-system-colors-form";
 const SAMPLE_THEMES = [
   { backColor: "aliceblue", frontColor: "royalblue", axis: "ld" },
   { backColor: "darkslategray", frontColor: "snow", axis: "dl" },
 ];
 
-const LS_KEY = "design-system-colors-form";
+function parseOrDefault(
+  formStore?: string | null
+): (typeof SAMPLE_THEMES)[number] {
+  return formStore ? JSON.parse(formStore) : SAMPLE_THEMES[0];
+}
 
 export default function ColorsPage() {
-  function handleInput(e: any) {
-    const data = formdata(e.currentTarget);
-    // console.log("form input", { data });
-    sessionStorage.setItem(LS_KEY, JSON.stringify(data));
+  const [formStore, setFormStore] = useLocalStorage(LS_KEY);
 
-    setTheme({
-      axis: data.axis.toString(),
-      backColor: data.backColor.toString(),
-      frontColor: data.frontColor.toString(),
-    });
-  }
+  const { registerValue, updateForm, clearForm } = useForm(
+    parseOrDefault(formStore),
+    {
+      onChange(formValue) {
+        setFormStore(JSON.stringify(formValue));
+        console.log("ColorsPage", { formValue });
+        setTheme(formValue);
+      },
+    }
+  );
 
-  function handleSetTheme(e: any, ix: number) {
-    const f = e.target.form as HTMLFormElement;
-    const t = SAMPLE_THEMES[ix];
-    sessionStorage.setItem(LS_KEY, JSON.stringify(t));
-    f["axis"].value = t.axis;
-    f["backColor"].value = t.backColor;
-    f["frontColor"].value = t.frontColor;
-    setTheme(t);
+  function handleSetTheme(_: any, ix: number) {
+    updateForm(SAMPLE_THEMES[ix]);
   }
 
   function setTheme(t: (typeof SAMPLE_THEMES)[number]) {
     const { axis, backColor, frontColor } = t;
     const root = document.querySelector(":root") as HTMLElement;
     if (!root) return;
-    root.style.setProperty("--c-back", backColor.toString());
-    root.style.setProperty("--c-front", frontColor.toString());
+    root.style.setProperty("--c-back", backColor);
+    root.style.setProperty("--c-front", frontColor);
 
     const shades = Array(9)
       .fill(1)
@@ -68,63 +76,50 @@ export default function ColorsPage() {
     }
   }
 
-  const data =
-    typeof sessionStorage !== "undefined"
-      ? JSON.parse(sessionStorage.getItem(LS_KEY) ?? "{}")
-      : {};
-
   return (
     <main className={pageStyle.main_sm}>
       <h1>Colors</h1>
 
       <form
-        ref={(ref) => {
-          if (ref) {
-            handleInput({ currentTarget: ref });
-          }
-        }}
         className={panel()}
         onSubmit={(e) => e.preventDefault()}
-        onInput={handleInput}
+        onReset={clearForm}
         style={{
           display: "grid",
-          gap: "var(--sp-3)",
+          padding: "var(--sp-3)",
+          gap: "var(--sp-4)",
           marginBottom: "var(--sp-2)",
         }}
       >
         <h2>Pick a theme color set</h2>
-        {/* <Select
-          name="backColor"
+        <Select
+          layout="horizontal"
           label="Back color"
-          defaultValue={data["backColor"] ?? "aliceblue"}
+          {...registerValue("backColor")}
         >
           {CSS_COLORS.map((c) => (
-            <option key={c} value={c}>
+            <SelectItem key={c} value={c}>
               {c}
-            </option>
+            </SelectItem>
           ))}
         </Select>
 
         <Select
-          name="frontColor"
+          layout="horizontal"
           label="Front color"
-          defaultValue={data["frontColor"] ?? "royalblue"}
+          {...registerValue("frontColor")}
         >
           {CSS_COLORS.map((c) => (
-            <option key={c} value={c}>
+            <SelectItem key={c} value={c}>
               {c}
-            </option>
+            </SelectItem>
           ))}
         </Select>
 
-        <RadioGroup
-          label="Axis"
-          name="axis"
-          defaultValue={data["axis"] ?? "ld"}
-        >
-          <Radio value="ld">light-dark</Radio>
-          <Radio value="dl">dark-light</Radio>
-        </RadioGroup> */}
+        <RadioGroup layout="horizontal" label="Axis" {...registerValue("axis")}>
+          <RadioItem value="ld">light-dark</RadioItem>
+          <RadioItem value="dl">dark-light</RadioItem>
+        </RadioGroup>
 
         <div>
           <span>Example Themes: </span>

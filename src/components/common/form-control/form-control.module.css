@@ -2,8 +2,21 @@
   padding-inline: var(--sp-2);
 }
 
+.input[type="file"] {
+  padding-inline: var(--sp-1);
+}
+
 .input {
+  outline: none;
+  border: 1px solid var(--c-con-2);
+  border-radius: 2px;
   padding-block: var(--sp-1);
+  background-color: var(--c-con-1);
+  color: var(--c-con-9);
+}
+
+.input:focus {
+  outline: auto;
 }
 
 .input-vertical .input,
@@ -65,10 +78,10 @@
 .multiselect-trigger,
 .select-trigger {
   all: unset;
-  background-color: field;
+  background-color: var(--c-con-1);
   padding-inline: var(--sp-2);
   padding-block: var(--sp-1);
-  border: 1px solid light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border: 1px solid var(--c-con-2);
   border-radius: 2px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -90,10 +103,9 @@
 .multiselect-options,
 .select-options {
   width: var(--button-width);
-  background-color: field;
-  border: 1px solid light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  background-color: var(--c-back);
+  border: 1px solid var(--c-con-2);
   border-radius: 2px;
-  overflow: hidden;
   padding-block: var(--sp-1);
 }
 
@@ -101,6 +113,7 @@
 .select-option {
   padding-inline: var(--sp-2);
   padding-block: var(--sp-1);
+  color: var(--c-con-9);
 }
 
 .multiselect-option[data-active],

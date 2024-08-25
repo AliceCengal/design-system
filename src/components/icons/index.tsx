@@ -1,18 +1,18 @@
-import { createElement, HTMLAttributes } from "react";
+import { createElement, forwardRef, HTMLAttributes } from "react";
 import { cx } from "../../lib/cva";
 
 function icon(key: string, name: string) {
   return {
-    [name]: function ({
-      className,
-      ...props
-    }: HTMLAttributes<HTMLSpanElement>) {
+    [name]: forwardRef<HTMLSpanElement>(function (
+      { className, ...props }: HTMLAttributes<HTMLSpanElement>,
+      ref
+    ) {
       return createElement(
         "span",
-        { className: cx("material-icons-outlined", className), ...props },
+        { ref, className: cx("material-icons-outlined", className), ...props },
         key
       );
-    },
+    }),
   }[name];
 }
 
