@@ -147,6 +147,7 @@
 
 .radio-root[data-orientation="horizontal"] {
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .radio-item {
