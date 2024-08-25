@@ -1,4 +1,4 @@
-import { createContext, PropsWithChildren, useContext } from "react";
+import { createContext, PropsWithChildren, ReactNode, useContext } from "react";
 import useHash from "../../../utils/use-hash";
 import { useToggle } from "../../../utils/use-toggle";
 import { button } from "../../common/button";
@@ -7,7 +7,7 @@ import { CollapseIcon, ExpandIcon } from "../../icons";
 type SidebarLinkProps = {
   label: string;
   href: string;
-  Icon: (props: any) => JSX.Element;
+  Icon: (props: any) => ReactNode;
 };
 
 export function SidebarLink({ label, href, Icon }: SidebarLinkProps) {
