@@ -149,12 +149,8 @@
 
 .radio-knob {
   all: unset;
-  width: 1rem;
-  height: 1rem;
-  background-color: field;
-  box-shadow: 0px 0px 1px 1px inset rgba(0, 0, 0, 0.75);
-  border-radius: 99vw;
-  display: grid;
+  line-height: 1;
+  position: relative;
 }
 
 .radio-knob:focus {
@@ -162,10 +158,6 @@
 }
 
 .radio-knob > *[data-state="checked"] {
-  display: inline-block;
-  place-self: center;
-  height: 50%;
-  width: 50%;
-  background-color: var(--c-front);
-  border-radius: 99vw;
+  position: absolute;
+  inset: 0;
 }

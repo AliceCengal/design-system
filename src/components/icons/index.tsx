@@ -32,3 +32,5 @@ export const WebIcon = icon("web", "Web");
 export const TabIcon = icon("tab", "Tab");
 export const CheckIcon = icon("check", "Check");
 export const ExpandedIcon = icon("keyboard_arrow_down", "Expanded");
+export const RadioOffIcon = icon("radio_button_unchecked", "RadioOff");
+export const RadioOnIcon = icon("radio_button_checked", "RadioOn");
