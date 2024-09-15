@@ -3,16 +3,19 @@ import { cx } from "../../lib/cva";
 
 function icon(key: string, name: string) {
   return {
-    [name]: forwardRef<HTMLSpanElement>(function (
-      { className, ...props }: HTMLAttributes<HTMLSpanElement>,
-      ref
-    ) {
-      return createElement(
-        "span",
-        { ref, className: cx("material-icons-outlined", className), ...props },
-        key
-      );
-    }),
+    [name]: forwardRef<HTMLSpanElement, HTMLAttributes<HTMLSpanElement>>(
+      function ({ className, ...props }, ref) {
+        return createElement(
+          "span",
+          {
+            ref,
+            className: cx("material-icons-outlined", className),
+            ...props,
+          },
+          key
+        );
+      }
+    ),
   }[name];
 }
 

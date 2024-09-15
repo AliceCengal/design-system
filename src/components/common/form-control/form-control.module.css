@@ -135,7 +135,7 @@
 
 .radio-root {
   display: flex;
-  gap: var(--sp-2);
+  row-gap: var(--sp-2);
   column-gap: var(--sp-4);
   margin-block-start: var(--sp-2);
   justify-self: start;
