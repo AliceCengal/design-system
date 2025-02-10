@@ -79,16 +79,3 @@ export function Checkbox({
     </label>
   );
 }
-
-type FormdataOptions = {
-  withCheckboxGroups?: string[];
-};
-
-export function formdata(target: HTMLFormElement, opts?: FormdataOptions) {
-  const data = Object.fromEntries(new FormData(target));
-
-  if (opts?.withCheckboxGroups?.length) {
-  }
-
-  return data;
-}

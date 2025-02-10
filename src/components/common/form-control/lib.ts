@@ -7,3 +7,16 @@ export function stringToElement(node: ReactNode) {
     return node;
   }
 }
+
+type FormdataOptions = {
+  withCheckboxGroups?: string[];
+};
+
+export function formdata(target: HTMLFormElement, _?: FormdataOptions) {
+  const data = Object.fromEntries(new FormData(target));
+
+  // if (opts?.withCheckboxGroups?.length) {
+  // }
+
+  return data;
+}
