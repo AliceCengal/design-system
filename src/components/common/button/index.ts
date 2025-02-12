@@ -1,4 +1,4 @@
-import { cva } from "../../../lib/cva";
+import { cva } from "../../../libs/cva";
 
 import styles from "./button.module.css";
 
@@ -9,6 +9,10 @@ export const button = cva(styles.base, {
       soft: styles.soft,
       line: styles.line,
       text: styles.text,
+      bold_f: styles.bold_f,
+      soft_f: styles.soft_f,
+      line_f: styles.line_f,
+      text_f: styles.text_f,
       tab: styles.tab,
     },
     size: {

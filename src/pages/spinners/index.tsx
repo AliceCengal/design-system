@@ -2,7 +2,7 @@ import { button } from "../../components/common/button";
 import { SearchIcon } from "../../components/icons";
 import { spinner } from "../../components/common/spinner";
 import { ToggleView } from "../../components/common/toggle-view";
-import { generateText } from "../../lib/malay-text-synth";
+import { generateText } from "../../libs/malay-text-synth";
 import pageStyle from "../pages.module.css";
 
 export default function MenusPage() {

@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { button } from "../../components/common/button";
 import { TabPanel } from "../../components/common/tab";
-import { generateText } from "../../lib/malay-text-synth";
+import { generateText } from "../../libs/malay-text-synth";
 import pageStyle from "../pages.module.css";
 
 export default function FrontPage() {

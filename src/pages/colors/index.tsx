@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import { generateText } from "../../lib/malay-text-synth";
+import { generateText } from "../../libs/malay-text-synth";
 import { button } from "../../components/common/button";
 import { panel } from "../../components/common/panel";
 import pageStyle from "../pages.module.css";

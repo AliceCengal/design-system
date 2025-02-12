@@ -5,7 +5,7 @@ import {
   TextField,
   formdata,
 } from "../../components/common/form-control";
-import { generateText } from "../../lib/malay-text-synth";
+import { generateText } from "../../libs/malay-text-synth";
 import pageStyle from "../pages.module.css";
 import { Grid } from "../../components/common/box";
 import {

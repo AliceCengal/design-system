@@ -1,0 +1,31 @@
+import { createContext, useContext, useState } from "react";
+import type { StoreApi, UseBoundStore } from "zustand";
+
+export const createStoreContext = <
+  TInitial,
+  TStore extends UseBoundStore<StoreApi<any>>
+>(
+  getStore: (initial: TInitial) => TStore
+) => {
+  const Context = createContext<TStore | null>(null);
+
+  const Provider = (props: {
+    children?: React.ReactNode;
+    initialValue: TInitial;
+  }) => {
+    const [store] = useState(() => getStore(props.initialValue));
+    return <Context.Provider value={store}>{props.children}</Context.Provider>;
+  };
+
+  return [
+    Provider,
+    ((selector: Parameters<TStore>[0]) => {
+      const store = useContext(Context);
+      if (store === null) {
+        console.error("Missing provider for context:", Context);
+        throw new Error("Missing provider for context");
+      }
+      return store(selector);
+    }) as TStore,
+  ] as const;
+};

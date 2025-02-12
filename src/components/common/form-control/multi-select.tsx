@@ -9,7 +9,7 @@ import {
 import { ComponentProps, ReactNode } from "react";
 
 import { ExpandedIcon } from "../../icons";
-import { cx } from "../../../lib/cva";
+import { cx } from "../../../libs/cva";
 
 import styles from "./form-control.module.css";
 
