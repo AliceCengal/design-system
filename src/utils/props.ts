@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
 
-export type PropsWithChildElem<T = {}> = T & {
+export type PropsWithChildElem<T = object> = T & {
   children: ReactElement;
 };
