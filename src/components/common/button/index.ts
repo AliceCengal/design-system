@@ -15,6 +15,7 @@ export const button = cva(styles.base, {
       small: styles.small,
       regular: styles.regular,
       large: styles.large,
+      auto: "",
     },
     justifyContent: {
       center: styles.center,

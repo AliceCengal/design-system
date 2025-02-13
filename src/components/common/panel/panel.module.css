@@ -1,5 +1,5 @@
 .base {
-  border-radius: 4px;
+  border-radius: var(--sp-1);
 }
 
 .white {
@@ -20,21 +20,25 @@
 
 .xs {
   max-width: var(--sp-xs);
+  width: 100%;
   margin-inline: auto;
 }
 
 .sm {
   max-width: var(--sp-sm);
+  width: 100%;
   margin-inline: auto;
 }
 
 .md {
   max-width: var(--sp-md);
+  width: 100%;
   margin-inline: auto;
 }
 
 .lg {
   max-width: var(--sp-lg);
+  width: 100%;
   margin-inline: auto;
 }
 
