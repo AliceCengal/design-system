@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 
-export function useUpdate<T>() {
+export function useUpdate() {
   const [isLoading, setIsLoading] = useState(false);
   const update = useCallback((fn: () => Promise<any>) => {
     setIsLoading(true);

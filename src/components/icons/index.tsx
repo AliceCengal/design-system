@@ -1,5 +1,5 @@
 import { createElement, forwardRef, HTMLAttributes } from "react";
-import { cx } from "../../lib/cva";
+import { cx } from "../../libs/cva";
 
 function icon(key: string, name: string) {
   return {

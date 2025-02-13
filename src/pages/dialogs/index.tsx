@@ -3,7 +3,7 @@ import { Box } from "../../components/common/box";
 import { button } from "../../components/common/button";
 import { Dialog, DialogActions } from "../../components/common/modal-dialog";
 import { panel } from "../../components/common/panel";
-import { generateText } from "../../lib/malay-text-synth";
+import { generateText } from "../../libs/malay-text-synth";
 import { PropsWithChildElem } from "../../utils/props";
 import { useToggle } from "../../utils/use-toggle";
 import pageStyle from "../pages.module.css";
