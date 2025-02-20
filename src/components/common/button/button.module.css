@@ -165,7 +165,7 @@ a.base:hover {
   padding-inline: 0;
 }
 
-.small > *:not(:global(.material-icons-outlined)):not(:global(.spinner)) {
+.small > *:not(svg):not(:global(.spinner)) {
   margin-inline: var(--sp-2);
 }
 
@@ -174,7 +174,7 @@ a.base:hover {
   padding-inline: var(--sp-2);
 }
 
-.regular > *:not(:global(.material-icons-outlined)):not(:global(.spinner)) {
+.regular > *:not(svg):not(:global(.spinner)) {
   margin-inline: var(--sp-2);
 }
 
@@ -183,7 +183,7 @@ a.base:hover {
   padding-inline: var(--sp-4);
 }
 
-.large > *:not(:global(.material-icons-outlined)):not(:global(.spinner)) {
+.large > *:not(svg):not(:global(.spinner)) {
   margin-inline: var(--sp-2);
 }
 

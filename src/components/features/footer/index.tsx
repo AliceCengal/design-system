@@ -8,7 +8,8 @@ export function Footer() {
         padding: "2px 8px",
       }}
     >
-      &copy; Athran Zuhail 2023
+      <span aria-label="app version number">v{APP_VERSION}</span>&emsp;&copy;
+      Athran Zuhail 2023
     </footer>
   );
 }
