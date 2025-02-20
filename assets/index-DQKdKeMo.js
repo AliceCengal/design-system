@@ -1,1 +1,0 @@
-import{r as n}from"./index-CPnfweoN.js";function o({as:t="div",children:r,className:i,...e}){return e.display="grid",n.createElement(t,{className:i,style:e},r)}function d({as:t="div",children:r,className:i,...e}){return n.createElement(t,{className:i,style:e},r)}export{d as B,o as G};
