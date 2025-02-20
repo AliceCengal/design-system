@@ -1,10 +1,10 @@
-import { MutableRefObject, useRef } from "react";
+import { ReactElement, RefObject, useRef } from "react";
 
 import { useToggle } from "../../../utils/use-toggle";
 import { useUpdate } from "../../../utils/use-update";
 
 type ToggleViewProps = {
-  children: (open: boolean, toggleOpen: (a?: any) => void) => JSX.Element;
+  children: (open: boolean, toggleOpen: (a?: any) => void) => ReactElement;
 };
 
 export function ToggleView({ children }: ToggleViewProps) {
@@ -17,8 +17,8 @@ type ToggleViewWithRefProps = {
   children: (
     open: boolean,
     toggleOpen: (a: any) => void,
-    ref: MutableRefObject<any>
-  ) => JSX.Element;
+    ref: RefObject<any>
+  ) => ReactElement;
 };
 
 export function ToggleViewWithRef({ children }: ToggleViewWithRefProps) {
@@ -32,7 +32,7 @@ type UpdateViewProps = {
   children: (
     isLoading: boolean,
     update: (fn: () => Promise<any>) => void
-  ) => JSX.Element;
+  ) => ReactElement;
 };
 
 export function UpdateView({ children }: UpdateViewProps) {
