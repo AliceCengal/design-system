@@ -30,11 +30,16 @@ export const button = cva(styles.base, {
       true: styles.active,
       false: "",
     },
+    buttonText: {
+      true: styles.button_text,
+      false: "",
+    },
   },
   defaultVariants: {
     kind: "soft",
     size: "regular",
     justifyContent: "center",
     active: false,
+    buttonText: true,
   },
 });

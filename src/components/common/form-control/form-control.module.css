@@ -104,13 +104,14 @@
 .select-options {
   width: var(--button-width);
   background-color: var(--c-back);
-  border: 1px solid var(--c-con-2);
-  border-radius: 2px;
+  border: 1px solid var(--c-con-5);
+  border-radius: var(--sp-1);
   padding-block: var(--sp-1);
 }
 
 .multiselect-option,
 .select-option {
+  background-color: var(--c-con-1);
   padding-inline: var(--sp-2);
   padding-block: var(--sp-1);
   color: var(--c-con-9);
