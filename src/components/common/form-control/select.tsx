@@ -1,5 +1,5 @@
 import * as SelectPrimitive from "@radix-ui/react-select";
-import { ComponentProps, ReactNode } from "react";
+import { ComponentProps, ReactNode, RefObject } from "react";
 import { ExpandedIcon } from "../../icons";
 import styles from "./form-control.module.css";
 import { stringToElement } from "./lib";
@@ -8,12 +8,14 @@ type SelectProps = ComponentProps<typeof SelectPrimitive.Root> & {
   layout?: "horizontal" | "vertical" | "freeform";
   label?: ReactNode;
   hint?: ReactNode;
+  containerRef?: RefObject<HTMLElement | null>;
 };
 
 export function Select({
   layout = "vertical",
   label,
   hint,
+  containerRef,
   children,
   ...props
 }: SelectProps) {
@@ -27,7 +29,7 @@ export function Select({
             <ExpandedIcon />
           </SelectPrimitive.Icon>
         </SelectPrimitive.Trigger>
-        <SelectPrimitive.Portal>
+        <SelectPrimitive.Portal container={containerRef?.current}>
           <SelectPrimitive.Content className={styles["select-options"]}>
             <SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport>
           </SelectPrimitive.Content>

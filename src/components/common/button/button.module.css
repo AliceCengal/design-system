@@ -1,12 +1,19 @@
 .base {
-  font-weight: 500;
-  text-transform: uppercase;
   border: none;
   border-radius: var(--sp-1);
+  position: relative;
+}
+
+.button_text {
+  font-weight: 500;
+  text-transform: uppercase;
   line-height: 1;
   font-size: 0.9rem;
-  position: relative;
   align-content: center;
+}
+
+.button_text > span {
+  vertical-align: middle;
 }
 
 a.base,
